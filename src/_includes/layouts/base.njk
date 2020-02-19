@@ -1,0 +1,70 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+		<link rel="stylesheet" href="css/main.css">
+		{# <link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/apple-touch-icon.png' | path }}">
+		<link rel="icon" href="{{ '/images/favicon.png' | path }}" > #}
+		<title>{{ title }}</title>
+	</head>
+
+	<body>
+		<header role="banner">
+			<div class="container">
+				<a href="/" class="link link--brand">
+					<svg viewBox="0 0 32 32" class="icon icon--pcc" aria-hidden="true" focusable="true"><use href="/images/pcc.svg#pcc" /></svg>
+					<span class="brand__title screen-reader-text">Labour Platform Hub</span>
+				</a>
+				<div class="inner">
+					{# <nav aria-labelledby="menu-primary-label">
+						<button class="button button--borderless menu-toggle" aria-expanded="false">
+							<svg viewBox="0 0 20 20" class="icon icon--open" aria-hidden="true" focusable="true"><use href="/images/menu.svg#menu" /></svg>
+							<svg viewBox="0 0 20 20" class="icon icon--close" aria-hidden="true" focusable="true"><use href="/images/close.svg#close" /></svg>
+							<span id="menu-primary-label" class="menu-toggle__label">Menu</span>
+						</button>
+						<ul class="menu">
+							<li>
+								<a class="menu__item" href="/">About</a>
+							</li>
+						</ul>
+					</nav> #}
+				</div>
+			</div>
+		</header>
+		<div class="wrap container" role="document">
+      		<div class="content">
+				<main>
+                    <div class="page-header">
+                        <h1>{{ title }}</h1>
+						<p class="subhead">Practical tools for co-ops.</p>
+                    </div>
+                    <ul class="cards" id="tools">
+						{% for tool in tools.items %}
+						<li class="card__wrapper">
+						<article class="card">
+							<header>
+								<h2><a class="card__link" href="{{ tool.url }}">{{ tool.name }}</a></h2>
+							</header>
+							<aside class="meta">
+								<div class="card__meta"><svg class="icon icon--settings" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/settings.svg#settings" /></svg> License: {{ tool.license }}</div>
+								<div class="card__meta"><svg class="icon icon--report" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/report.svg#report" /></svg> Pricing: {{ tool.pricing }}</div>
+								<div class="card__meta"><svg class="icon icon--sector" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/images/sector.svg#sector" /></svg> Sectors: {{ tool.sectors }}</div>
+								<div class="card__meta"><svg class="icon icon--info" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/info.svg#info" /></svg> Languages: {{ tool.languages }}</div>
+							</aside>
+						</article>
+						</li>
+						{% endfor %}
+                    </ul>
+				</main>
+		</div>
+		<footer class="content-info">
+  			<div class="container"></div>
+  		</footer>
+		<script src="js/main.js"></script>
+
+		{# <script src="{{ '/scripts/pinecone.umd.js' | path }}"></script> #}
+	</body>
+</html>
