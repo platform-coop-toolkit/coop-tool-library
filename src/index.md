@@ -1,4 +1,4 @@
 ---
-title: Labour Platform Hub
+title: Labor Platform Hub
 layout: layouts/base.njk
 ---
