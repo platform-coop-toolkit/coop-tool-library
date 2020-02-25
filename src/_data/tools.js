@@ -15,6 +15,21 @@ const fancyConcat = (array) => {
     return output;
 };
 
+const compareTools = (a, b) => {
+    const toolA = a.name.toUpperCase();
+    const toolB = b.name.toUpperCase();
+
+    let comparison = 0;
+
+    if (toolA > toolB) {
+        comparison = 1;
+    } else if (toolA < toolB) {
+        comparison = -1;
+    }
+
+    return comparison;
+};
+
 module.exports = async function() {
     return new Promise((resolve, reject) => {
         var tools = [];
@@ -37,7 +52,7 @@ module.exports = async function() {
                 tools.push({url, name, license, pricing, sectors, languages});
             });
             fetchNextPage();
-            resolve({items: tools});
+            resolve({items: tools.sort(compareTools)});
         }, function done(err) {
             if (err) { console.error(err); reject(error); }
         });
