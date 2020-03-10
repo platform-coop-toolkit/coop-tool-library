@@ -38,17 +38,28 @@ module.exports = async function() {
             records.forEach(function(record) {
                 const name = record.get('Name');
                 const license = record.get('License');
+                if (!license) {
+                    license = 'Not specified';
+                }
                 const pricing = record.get('Pricing');
+                if (!pricing) {
+                    pricing = 'Not specified';
+                }
                 const url = record.get('URL');
+                if (!url) {
+                    url = false;
+                }
                 let sectors = record.get('Sector');
-                let languages = record.get('Language Support');
                 if (!sectors) {
                     sectors = 'Any';
                 } else {
                     sectors = fancyConcat(sectors);
                 }
+                let languages = record.get('Language Support');
                 if (languages) {
                     languages = fancyConcat(languages);
+                } else {
+                    languages = 'Not specified'
                 }
                 if (name) {
                     tools.push({url, name, license, pricing, sectors, languages});

@@ -46,7 +46,11 @@
 						<li class="card__wrapper">
 						<article class="card">
 							<header>
+								{% if tool.url %}
 								<h2><a class="card__link" href="{{ tool.url }}">{{ tool.name }}</a></h2>
+								{% else %}
+								<h2>{{ tool.name }}</h2>
+								{% endif %}
 							</header>
 							<aside class="meta">
 								<div class="card__meta"><svg class="icon icon--settings" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/settings.svg#settings" /></svg> License: {{ tool.license }}</div>
