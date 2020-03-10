@@ -50,8 +50,9 @@ module.exports = async function() {
                 if (languages) {
                     languages = fancyConcat(languages);
                 }
-
-                tools.push({url, name, license, pricing, sectors, languages});
+                if (name) {
+                    tools.push({url, name, license, pricing, sectors, languages});
+                }
             });
             fetchNextPage();
             resolve({items: tools.sort(compareTools)});
