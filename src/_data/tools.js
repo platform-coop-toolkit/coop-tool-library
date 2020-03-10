@@ -47,7 +47,9 @@ module.exports = async function() {
                 } else {
                     sectors = fancyConcat(sectors);
                 }
-                languages = fancyConcat(languages);
+                if (languages) {
+                    languages = fancyConcat(languages);
+                }
 
                 tools.push({url, name, license, pricing, sectors, languages});
             });
