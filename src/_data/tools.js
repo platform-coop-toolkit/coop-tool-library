@@ -37,7 +37,7 @@ module.exports = async function() {
         base('Tools').select().eachPage(function page(records, fetchNextPage) {
             records.forEach(function(record) {
                 const name = record.get('Name');
-                const license = record.get('License');
+                let license = record.get('License');
                 if (!license) {
                     license = 'Not specified';
                 }
