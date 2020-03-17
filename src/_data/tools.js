@@ -41,11 +41,11 @@ module.exports = async function() {
                 if (!license) {
                     license = 'Not specified';
                 }
-                const pricing = record.get('Pricing');
+                let pricing = record.get('Pricing');
                 if (!pricing) {
                     pricing = 'Not specified';
                 }
-                const url = record.get('URL');
+                let url = record.get('URL');
                 if (!url) {
                     url = false;
                 }
