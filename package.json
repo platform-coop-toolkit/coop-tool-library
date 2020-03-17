@@ -44,7 +44,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {
-    "@platform-coop-toolkit/pinecone": "^1.0.0-alpha.10",
+    "@platform-coop-toolkit/pinecone": "^1.0.0-alpha.11",
     "airtable": "^0.8.1"
   }
 }
