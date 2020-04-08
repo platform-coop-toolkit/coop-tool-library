@@ -1,19 +1,8 @@
 require('dotenv').config()
-const apiKey = process.env.AIRTABLE_API_KEY;
-const airtable = require('airtable');
-const base = new airtable({apiKey}).base('app2PPGcwBN1aSciK');
 
-const fancyConcat = (array) => {
-    let output;
-    if (array.length > 2) {
-        const lastItem = array.pop();
-        output = array.join(', ');
-        output += `, and ${lastItem}`;
-    } else {
-        output = array.join(' and ');
-    }
-    return output;
-};
+const fetch = require('node-fetch');
+
+const endpoint = process.env.TOOLS_API || 'https://directory.platform.coop/api/tools/';
 
 const compareTools = (a, b) => {
     const toolA = a.name.toUpperCase();
@@ -31,44 +20,26 @@ const compareTools = (a, b) => {
 };
 
 module.exports = async function() {
-    return new Promise((resolve, reject) => {
-        var tools = [];
-
-        base('Tools').select().eachPage(function page(records, fetchNextPage) {
-            records.forEach(function(record) {
-                const name = record.get('Name');
-                let license = record.get('License');
-                if (!license) {
-                    license = 'Not specified';
-                }
-                let pricing = record.get('Pricing');
-                if (!pricing) {
-                    pricing = 'Not specified';
-                }
-                let url = record.get('URL');
-                if (!url) {
-                    url = false;
-                }
-                let sectors = record.get('Sector');
-                if (!sectors) {
-                    sectors = 'Any';
-                } else {
-                    sectors = fancyConcat(sectors);
-                }
-                let languages = record.get('Language Support');
-                if (languages) {
-                    languages = fancyConcat(languages);
-                } else {
-                    languages = 'Not specified'
-                }
-                if (name) {
-                    tools.push({url, name, license, pricing, sectors, languages});
-                }
+    return new Promise((resolve) => {
+        fetch(endpoint)
+            .then(res => res.json())
+            .then(json => {
+                const tools = json.map(tool => {
+                    if (tool.languages_supported && tool.languages_supported.length > 0)
+                    tool.languages = tool.languages_supported.map(language => {
+                        return language.iso_name;
+                    });
+                    if (tool.niches && tool.niches.length > 0)
+                    tool.nicheNames = tool.niches.map(niche => {
+                        return niche.name;
+                    });
+                    return tool;
+                });
+                resolve(tools.sort(compareTools));
             });
-            fetchNextPage();
-            resolve({items: tools.sort(compareTools)});
         }, function done(err) {
-            if (err) { console.error(err); reject(error); }
+            if (err) {
+                reject(error);
+            }
         });
-    });
 }
