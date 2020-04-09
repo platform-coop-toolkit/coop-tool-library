@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+require('laravel-mix-svelte');
 
 mix.setPublicPath('./_site');
 	
@@ -8,7 +9,8 @@ mix.sass('src/scss/main.scss', '_site/css', {
     },
 });
 
-mix.js('src/js/main.js', '_site/js');
+mix.js('src/js/main.js', '_site/js')
+    .svelte();
 
 mix.copy('node_modules/@platform-coop-toolkit/pinecone/src/assets/images', '_site/images')
     .copy('node_modules/@platform-coop-toolkit/pinecone/src/assets/fonts', '_site/fonts')
