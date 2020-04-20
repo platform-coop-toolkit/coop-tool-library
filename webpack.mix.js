@@ -10,7 +10,7 @@ mix.sass('src/scss/main.scss', '_site/css', {
 });
 
 mix.js('src/js/main.js', '_site/js')
-    .svelte();
+    .svelte({dev: mix.inProduction() || false});
 
 mix.copy('node_modules/@platform-coop-toolkit/pinecone/src/assets/images', '_site/images')
     .copy('node_modules/@platform-coop-toolkit/pinecone/src/assets/fonts', '_site/fonts')
