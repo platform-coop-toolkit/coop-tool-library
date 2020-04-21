@@ -9,9 +9,9 @@
 
 {#await fetchTools}
 	<p>Loading…</p>
-{:then data}
+{:then tools}
     <ul class="cards">
-        {#each data as tool}
+        {#each tools as tool}
         <li class="card__wrapper">
             <Tool tool={tool} />
         </li>
