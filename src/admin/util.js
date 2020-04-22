@@ -1,9 +1,11 @@
 import fancyConcat from '../filters/fancy-concat';
-import markdownFilter from '../filters/markdown-filter';
+import markdown from '../filters/markdown';
+import slugify from '../filters/slugify';
 import site from '../_data/site.json';
 
 export {
 	fancyConcat,
-	markdownFilter,
+	markdown,
+	slugify,
 	site
 };

@@ -79,7 +79,6 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
-    "slugify": "^1.4.0",
     "stylelint": "^13.2.1",
     "stylelint-config-standard-scss": "^1.1.0",
     "stylelint-order": "^4.0.0",
@@ -90,8 +89,9 @@
     "xo": "^0.29.1"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.10.0",
+		"@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-navigation": "^0.1.5",
-    "@platform-coop-toolkit/pinecone": "^1.0.0-alpha.14"
+    "@platform-coop-toolkit/pinecone": "^1.0.0-alpha.14",
+		"slugify": "^1.4.0"
   }
 }

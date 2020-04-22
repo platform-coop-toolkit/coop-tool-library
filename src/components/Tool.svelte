@@ -1,16 +1,13 @@
 <script>
-    const fancyConcat = require('../filters/fancy-concat.js');
+    const fancyConcat = require('../filters/fancy-concat');
+	const slugify = require('../filters/slugify');
 
     export let tool;
 </script>
 
 <article class="card">
     <header>
-        {#if tool.url }
-        <h2><a class="card__link" href="{ tool.url }">{ tool.name }</a></h2>
-        {:else}
-        <h2>{ tool.name }</h2>
-        {/if}
+        <h2><a class="card__link" href="/tools/{ slugify(tool.name) }/">{ tool.name }</a></h2>
     </header>
     <aside class="meta">
         {#if tool.nicheNames }

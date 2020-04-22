@@ -2,8 +2,9 @@ const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const errorOverlay = require('eleventy-plugin-error-overlay');
 const fs = require('fs');
 const fancyConcat = require('./src/filters/fancy-concat');
-const markdownFilter = require('./src/filters/markdown-filter');
-const htmlMinTransform = require('./src/transforms/html-min.js');
+const markdown = require('./src/filters/markdown');
+const slugify = require('./src/filters/slugify');
+const htmlMinTransform = require('./src/transforms/html-min');
 
 module.exports = eleventyConfig => {
 	// Plugins.
@@ -15,7 +16,8 @@ module.exports = eleventyConfig => {
 
 	// Filters.
 	eleventyConfig.addFilter('fancyConcat', fancyConcat);
-	eleventyConfig.addFilter('markdown', markdownFilter);
+	eleventyConfig.addFilter('markdown', markdown);
+	eleventyConfig.addFilter('slugify', slugify);
 
 	// Passthrough file copy.
 	eleventyConfig.addPassthroughCopy({'src/_includes/static/css': 'css'});
