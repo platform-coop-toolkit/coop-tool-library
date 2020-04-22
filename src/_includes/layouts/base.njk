@@ -18,10 +18,12 @@
 		<meta property="twitter:description" content="{{ site.description }}">
 		{# <meta property="twitter:image" content=""> #}
 		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
-		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="/css/main.css">
 		<link rel="preconnect" href="{{ global.endpoint }}">
-		{# <link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/apple-touch-icon.png' | path }}">
-		<link rel="icon" href="{{ '/images/favicon.png' | path }}" > #}
+
+		{# <link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/apple-touch-icon.png' | path }}"> #}
+		<link rel="icon" href="/images/favicon.png" type="image/png">
+		<link rel="shortcut icon" href="/images/favicon.svg" type="image/svg+xml">
 	</head>
 
 	<body{% if page.url === '/' %} class="home"{% endif %}>
