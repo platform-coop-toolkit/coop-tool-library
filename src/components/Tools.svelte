@@ -1,15 +1,17 @@
 <script>
-    const fetchTools = (async () => {
-        const response = await fetch('/data.json')
-        return await response.json()
-    })()
+    import { onMount } from 'svelte';
+
+    let tools = [];
+
+    onMount(async () => {
+		const response = await fetch('https://demo.directory.platform.coop/api/tools/');
+		tools = await response.json();
+	});
 
     import Tool from './Tool.svelte';
 </script>
 
-{#await fetchTools}
-	<p>Loading…</p>
-{:then tools}
+{#if tools}
     <ul class="cards">
         {#each tools as tool}
         <li class="card__wrapper">
@@ -17,6 +19,6 @@
         </li>
         {/each}
     </ul>
-{:catch error}
-	<p>An error occurred!</p>
-{/await}
+{:else}
+	<p>Loading…</p>
+{/if}

@@ -1,5 +1,5 @@
 <script>
-    const fancyConcat = require('../utils/fancyConcat.js');
+    const fancyConcat = require('../utils/fancy-concat.js');
 
     export let tool;
 </script>
