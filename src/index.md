@@ -1,4 +1,4 @@
 ---
-title: Platform Co-op Tool Library
+title: Cooperative Tool Library
 layout: layouts/base.njk
 ---

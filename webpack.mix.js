@@ -2,6 +2,7 @@
 
 const mix = require('laravel-mix');
 require('laravel-mix-svelte');
+require('laravel-mix-purgecss');
 
 const distPath = 'dist';
 
@@ -25,5 +26,15 @@ mix.options({
 	processCssUrls: false
 });
 
-mix.sourceMaps(false, 'source-map')
-	.version();
+if (mix.inProduction()) {
+	mix.purgeCss({
+		content: [
+			'./src/_includes/**/*.njk',
+			'./src/_includes/svg/*.svg',
+			'./src/components/*.svelte',
+			'./src/transforms/*.js'
+		]
+	})
+		.sourceMaps(false, 'source-map')
+		.version();
+}
