@@ -70,16 +70,14 @@
 		<div class="wrap container" role="document">
       		<div class="content">
 				<main>
-                    <div class="page-header">
-                        <h1>{{ title }}</h1>
-						<p class="subhead">{{ site.description }}</p>
-                    </div>
-                    <div id="tools"><div>
+                    {% block content %}
+					{% endblock %}
 				</main>
 		</div>
 		<footer class="content-info">
   			<div class="container"></div>
   		</footer>
 		<script src="js/main.js"></script>
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
 	</body>
 </html>
