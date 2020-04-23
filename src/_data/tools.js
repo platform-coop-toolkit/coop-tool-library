@@ -48,7 +48,7 @@ module.exports = async function () {
 								nicheGroups[niche.name] = false;
 							}
 						});
-						tool.nicheGroups = nicheGroups;
+						tool.niches = nicheGroups;
 					}
 
 					return tool;
