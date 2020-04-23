@@ -1,0 +1,26 @@
+<article class="card">
+	<header>
+		{% if tool.url %}
+		<h2><a class="card__link" href="/tools/{{ tool.name | slug }}/">{{ tool.name }}</a></h2>
+		{% else %}
+		<h2>{{ tool.name }}</h2>
+		{% endif %}
+	</header>
+	<aside class="meta">
+		{% if tool.nicheNames %}
+		<div class="card__meta"><span class="screen-reader-text">tool type: </span><strong>{{ tool.nicheNames | fancyConcat }}</strong></div>
+		{% endif %}
+		{% if tool.license %}
+		<div class="card__meta"><svg class="icon icon--settings" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/settings.svg#settings" /></svg> Licensing: {{ tool.license }}</div>
+		{% endif %}
+		{% if tool.pricing %}
+		<div class="card__meta"><svg class="icon icon--report" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/report.svg#report" /></svg> Pricing: {{ tool.pricing }}</div>
+		{% endif %}
+		{% if tool.sectors.length > 0 %}
+		<div class="card__meta"><svg class="icon icon--sector" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/images/sector.svg#sector" /></svg> Sector: {{ tool.sectors | fancyConcat }}</div>
+		{% endif %}
+		{% if tool.languages.length > 0 %}
+		<div class="card__meta"><svg class="icon icon--info" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/info.svg#info" /></svg> Language: {{ tool.languages | fancyConcat }}</div>
+		{% endif %}
+	</aside>
+</article>
