@@ -24,6 +24,7 @@
 		{# <link rel="apple-touch-icon" sizes="180x180" href="{{ '/images/apple-touch-icon.png' | path }}"> #}
 		<link rel="icon" href="/images/favicon.png" type="image/png">
 		<link rel="shortcut icon" href="/images/favicon.svg" type="image/svg+xml">
+		<script src="/js/main.js" defer></script>
 	</head>
 
 	<body{% if page.url === '/' %} class="home"{% endif %}>
@@ -62,6 +63,18 @@
 							<li>
 								<a {% if page.url === '/' %}aria-current="page" {% endif %}class="menu__item" href="/">Browse All</a>
 							</li>
+							<li>
+								<a {% if page.url === '/get-recommendations/' %}aria-current="page" {% endif %}class="menu__item" href="/get-recommendations/">See what other co-ops are using</a>
+							</li>
+							<li>
+								<a {% if page.url === '/share-tools/' %}aria-current="page" {% endif %}class="menu__item" href="/share-tools/">Share a tool</a>
+							</li>
+							<li>
+								<a {% if page.url === '/about/' %}aria-current="page" {% endif %}class="menu__item" href="/about/">About</a>
+							</li>
+							<li>
+								<a {% if page.url === '/glossary/' %}aria-current="page" {% endif %}class="menu__item" href="/glossary/">Glossary</a>
+							</li>
 						</ul>
 					</nav>
 				</div>
@@ -77,7 +90,6 @@
 		<footer class="content-info">
   			<div class="container"></div>
   		</footer>
-		<script src="/js/main.js"></script>
 		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
 	</body>
 </html>

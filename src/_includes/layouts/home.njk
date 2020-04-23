@@ -2,8 +2,50 @@
 
 {% block content %}
     <div class="page-header">
-		<h1>{{ title }}</h1>
-		<p class="subhead">{{ site.description }}</p>
+		<div class="inside">
+			<h1>{{ title }}</h1>
+			<p class="subhead">{{ site.description }}</p>
+			<div class="calls-to-action">
+				<ul>
+					<li><a href="#tools">Find practical tools</a><br />for your co-op</li>
+					<li><a href="/get-recommendations/">See other co-op’s tools</a><br />See other co-op’s tools</li>
+					<li><a href="/share-tools/">Share your tools</a><br />to help other co-ops find tools</li>
+				</ul>
+			</div>
+		</div>
 	</div>
-	<div id="tools"><div>
+	<div id="tools">
+		<ul class="cards">
+			{% for tool in tools %}
+			<li class="card__wrapper">
+				<article class="card">
+					<header>
+						{% if tool.url %}
+						<h2><a class="card__link" href="{{ tool.url }}">{{ tool.name }}</a></h2>
+						{% else %}
+						<h2>{{ tool.name }}</h2>
+						{% endif %}
+					</header>
+					<aside class="meta">
+						{% if tool.nicheNames %}
+						<div class="card__meta"><svg class="icon icon--toolkit" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/toolkit.svg#toolkit" /></svg> Tool Type: {{ tool.nicheNames | fancyConcat }}</div>
+						{% endif %}
+						{% if tool.license %}
+						<div class="card__meta"><svg class="icon icon--settings" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/settings.svg#settings" /></svg> License: {{ tool.license }}</div>
+						{% endif %}
+						{% if tool.pricing %}
+						<div class="card__meta"><svg class="icon icon--report" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/report.svg#report" /></svg> Pricing: {{ tool.pricing }}</div>
+						{% endif %}
+						{% if tool.sectors.length > 0 %}
+						<div class="card__meta"><svg class="icon icon--sector" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/images/sector.svg#sector" /></svg> Sectors: {{ tool.sectors | fancyConcat }}</div>
+						{% endif %}
+						{% if tool.languages.length > 0 %}
+						<div class="card__meta"><svg class="icon icon--info" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/info.svg#info" /></svg> Languages: {{ tool.languages | fancyConcat }}</div>
+						{% endif %}
+					</aside>
+				</article>
+			</li>
+			{% endfor %}
+		</ul>
+	<div>
 {% endblock %}

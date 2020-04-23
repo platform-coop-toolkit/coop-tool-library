@@ -2,7 +2,6 @@
 
 import Pinecone from '@platform-coop-toolkit/pinecone';
 import 'wicg-inert';
-import Tools from '../components/Tools.svelte';
 
 const menu = document.querySelector('.menu');
 const menuToggle = document.querySelector('.menu-toggle');
@@ -18,7 +17,3 @@ if (cards.length > 0) {
 		new Pinecone.Card(card);
 	});
 }
-
-new Tools({
-	target: document.querySelector('#tools')
-});
