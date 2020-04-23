@@ -21,7 +21,7 @@
 				<article class="card">
 					<header>
 						{% if tool.url %}
-						<h2><a class="card__link" href="{{ tool.url }}">{{ tool.name }}</a></h2>
+						<h2><a class="card__link" href="/tools/{{ tool.name | slug }}/">{{ tool.name }}</a></h2>
 						{% else %}
 						<h2>{{ tool.name }}</h2>
 						{% endif %}
