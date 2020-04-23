@@ -34,9 +34,21 @@ module.exports = async function () {
 					}
 
 					if (tool.niches && tool.niches.length > 0) {
-						tool.nicheNames = tool.niches.map(niche => {
-							return niche.name;
+						const nicheGroups = {};
+						Array.prototype.forEach.call(tool.niches, niche => {
+							if (niche.name.includes(' - ')) {
+								const fragments = niche.name.split(' - ');
+
+								if (!Object.prototype.hasOwnProperty.call(nicheGroups, fragments[0])) {
+									nicheGroups[fragments[0]] = [];
+								}
+
+								nicheGroups[fragments[0]].push(fragments[1]);
+							} else {
+								nicheGroups[niche.name] = false;
+							}
 						});
+						tool.nicheGroups = nicheGroups;
 					}
 
 					return tool;

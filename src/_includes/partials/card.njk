@@ -7,8 +7,15 @@
 		{% endif %}
 	</header>
 	<aside class="meta">
-		{% if tool.nicheNames %}
-		<div class="card__meta"><span class="screen-reader-text">tool type: </span><strong>{{ tool.nicheNames | fancyConcat }}</strong></div>
+		{% if tool.nicheGroups %}
+		<div class="card__meta"><span class="screen-reader-text">tool type: </span><strong>
+		{% for niche, subtypes in tool.nicheGroups %}
+			{{ niche }}{% if subtypes %}: {{ subtypes.join(', ') | safe }}{% endif %}<br />
+		{% endfor %}
+		</strong></div>
+		{% endif %}
+		{% if tool.usecount %}
+		<div class="card__meta">{{ tool.usecount }} {{ 'coops use' if tool.usecount > 1 else 'coop uses' }} it</div>
 		{% endif %}
 		{% if tool.license %}
 		<div class="card__meta"><svg class="icon icon--settings" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/settings.svg#settings" /></svg> Licensing: {{ tool.license }}</div>

@@ -13,6 +13,9 @@
         {#if tool.nicheNames }
         <div class="card__meta"><span class="screen-reader-text">tool type: </span><strong>{ fancyConcat(tool.nicheNames) }</strong></div>
         {/if}
+		{#if tool.useCount > 0}
+		<div class="card__meta">{ tool.usecount } { tool.usecount > 1 ? 'coops use' : 'coop uses' } it</div>
+		{/if}
         {#if tool.pricing }
         <div class="card__meta"><svg class="icon icon--report" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/report.svg#report" /></svg> Pricing: { tool.pricing }</div>
         {/if}
