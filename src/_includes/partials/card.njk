@@ -10,7 +10,7 @@
 		{% if tool.niches %}
 		<div class="card__meta"><span class="screen-reader-text">tool type: </span><strong>
 		{% for niche, subtypes in tool.niches %}
-			{{ niche }}{% if subtypes %}: {{ subtypes.join(', ') | safe }}{% endif %}<br />
+			{{ niche }}{% if subtypes %}: {{ subtypes.join(', ') | lower | safe }}{% endif %}<br />
 		{% endfor %}
 		</strong></div>
 		{% endif %}
