@@ -22,7 +22,6 @@ jobs:
       id: waitFor200
       with:
         site_name: "coop-tool-library"
-    - name: Axe CLI
+    - name: Run axe CLI
       run: |
-        npm install -g axe-cli
-        axe ${{ steps.waitFor200.outputs.url }}
+        npx axe-cli ${{ steps.waitFor200.outputs.url }}
