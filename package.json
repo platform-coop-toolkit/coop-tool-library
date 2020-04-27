@@ -5,8 +5,8 @@
   "main": "eleventy.config.js",
   "scripts": {
     "build:assets": "cross-env NODE_ENV=production run-s mix",
-		"build:site": "eleventy --config=eleventy.config.js",
-		"build:bundle": "rollup --config",
+    "build:site": "eleventy --config=eleventy.config.js",
+    "build:bundle": "rollup --config",
     "build:cms": "make-dir dist/admin && nunjucks-precompile src/_includes > dist/admin/templates.js -i \"\\.(njk|css|svg)$\"",
     "build": "run-s clean build:*",
     "clean": "run-p clean:*",
@@ -52,9 +52,10 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@erquhart/rollup-plugin-node-builtins": "^2.1.5",
     "@tbranyen/jsdom": "^13.0.0",
     "@tivac/eslint-plugin-svelte": "^1.3.0",
-    "@erquhart/rollup-plugin-node-builtins": "^2.1.5",
+    "axe-cli": "^3.2.0",
     "browser-sync-webpack-plugin": "^2.2.2",
     "concurrently": "^5.1.0",
     "cross-env": "^7.0.2",
@@ -89,9 +90,9 @@
     "xo": "^0.29.1"
   },
   "dependencies": {
-		"@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy": "^0.10.0",
     "@11ty/eleventy-navigation": "^0.1.5",
     "@platform-coop-toolkit/pinecone": "^1.0.0-alpha.14",
-		"slugify": "^1.4.0"
+    "slugify": "^1.4.0"
   }
 }
