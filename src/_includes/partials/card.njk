@@ -6,7 +6,7 @@
 		<h2>{{ tool.name }}</h2>
 		{% endif %}
 	</header>
-	<aside class="meta">
+	<div class="meta">
 		{% if tool.niches %}
 		<div class="card__meta"><span class="screen-reader-text">tool type: </span><strong>
 		{% for niche, subtypes in tool.niches %}
@@ -29,5 +29,5 @@
 		{% if tool.languages.length > 0 %}
 		<div class="card__meta"><svg class="icon icon--info" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/info.svg#info" /></svg> Language: {{ tool.languages | fancyConcat }}</div>
 		{% endif %}
-	</aside>
+	</div>
 </article>
