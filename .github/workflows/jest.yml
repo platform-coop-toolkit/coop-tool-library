@@ -1,6 +1,6 @@
 name: Run tests
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   test-axe:
@@ -22,7 +22,6 @@ jobs:
       id: waitFor200
       with:
         site_name: "coop-tool-library"
-    - name: Axe CLI
+    - name: Run aXe
       run: |
-        npm install -g axe-cli
-        axe ${{ steps.waitFor200.outputs.url }}
+        HOME_URL=${{ steps.waitFor200.outputs.url }} npm run test
