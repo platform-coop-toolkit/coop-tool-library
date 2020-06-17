@@ -16,6 +16,7 @@
 <script>
 	export let tools;
 	export let niches;
+	export let nicheFilter = "All";
 
 	import Card from '../components/Card.svelte';
 	import RadioGroup from '../components/RadioGroup.svelte';
@@ -51,7 +52,7 @@
 <div id="tools">
 	<div class="niches">
 		<h3>Find tools</h3>
-		<RadioGroup options={niches} activeOption={'All'} />
+		<RadioGroup options={niches} bind:activeOption={nicheFilter} />
 	</div>
-	<ToolList tools={tools} nicheFilter="All" />
+	<ToolList tools={tools} nicheFilter={nicheFilter} />
 </div>
