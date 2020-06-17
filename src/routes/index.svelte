@@ -15,12 +15,30 @@
 
 <script>
 	export let tools;
-	export let niches;
-	export let nicheFilter = "All";
+	export let niches;	
+
+	import { stores } from '@sapper/app';
+	const { page } = stores();
+
+	export let nicheParam = $page.query.niche;
+	
+	export let nicheFilter = nicheParam ? nicheParam : "All";
+
+	$: updateUrl(nicheFilter);
+
+	function updateUrl(nicheFilter) {		
+		if(typeof window !== 'undefined') {
+		const params = new URLSearchParams(window.location.search);
+		console.log(nicheFilter);
+		params.set("niche", nicheFilter);
+			window.history.pushState({}, "", decodeURIComponent(`${window.location.pathname}?${params}`));
+		}
+	}
 
 	import Card from '../components/Card.svelte';
 	import RadioGroup from '../components/RadioGroup.svelte';
 	import ToolList from '../components/ToolList.svelte';
+
 </script>
 
 <svelte:head>

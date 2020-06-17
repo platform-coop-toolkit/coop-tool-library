@@ -3,10 +3,9 @@
     export let nicheFilter = 'All';
 
     import Card from './Card.svelte';
-
 </script>
 
-<div class="cards">			
+<div class="cards" >			
     {#if nicheFilter === 'All'}
         {#each tools as tool}							
             <Card tool={tool} />				

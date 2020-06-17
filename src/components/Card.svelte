@@ -1,6 +1,6 @@
 <script>
     export let tool;
-    
+
     function fancyConcat(array) {
         let output;
         if (array.length > 2) {
