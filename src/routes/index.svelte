@@ -53,5 +53,5 @@
 		<h3>Find tools</h3>
 		<RadioGroup options={niches} activeOption={'All'} />
 	</div>
-	<ToolList tools={tools} />
+	<ToolList tools={tools} nicheFilter="All" />
 </div>
