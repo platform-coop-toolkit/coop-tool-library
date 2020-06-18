@@ -5,7 +5,7 @@
     import Card from './Card.svelte';
 
     const specialChecks = {
-        niche: function(tool, valueToCheck, nicheFilter) {
+        niches: function(tool, valueToCheck, nicheFilter) {
             if(nicheFilter === 'All') return true;
             else return Object.keys(tool.niches).includes(nicheFilter);    
         }
@@ -13,16 +13,16 @@
 
     function meetsFilters(filters, tool) {
 
-        if(meetsFilterCriteria(tool, "niches", filters.niche.value, specialChecks.niche) 
+        if(meetsFilterCriteria(tool, "niches", filters.niche.value) 
             && meetsFilterCriteria(tool, "pricing", filters.pricing.value)
             && meetsFilterCriteria(tool, "license", filters.license.value)) {
                 return true;
             } else return false;        
     }
 
-    function meetsFilterCriteria(tool, valueToCheck, filter, checkFunction) {
-        if(checkFunction) {
-            return checkFunction(tool, valueToCheck, filter);
+    function meetsFilterCriteria(tool, valueToCheck, filter) {
+        if(specialChecks[valueToCheck]) {
+            return specialChecks[valueToCheck](tool, valueToCheck, filter);
         }
         if(filter === 'All') return true;
         else return tool[valueToCheck] === filter;
