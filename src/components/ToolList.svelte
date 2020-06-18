@@ -1,14 +1,23 @@
 <script>
     export let tools = [];
-    export let nicheFilter = 'All';
-    export let pricingFilter = 'All';
-    export let licenseFilter = 'All';
+    export let currentFilters = {};
 
     import Card from './Card.svelte';
 
-    function hasNiche(tool, valueToCheck, nicheFilter) {
-        if(nicheFilter === 'All') return true;
-        else return Object.keys(tool.niches).includes(nicheFilter);        
+    const specialChecks = {
+        niche: function(tool, valueToCheck, nicheFilter) {
+            if(nicheFilter === 'All') return true;
+            else return Object.keys(tool.niches).includes(nicheFilter);    
+        }
+    }
+
+    function meetsFilters(filters, tool) {
+
+        if(meetsFilterCriteria(tool, "niches", filters.niche.value, specialChecks.niche) 
+            && meetsFilterCriteria(tool, "pricing", filters.pricing.value)
+            && meetsFilterCriteria(tool, "license", filters.license.value)) {
+                return true;
+            } else return false;        
     }
 
     function meetsFilterCriteria(tool, valueToCheck, filter, checkFunction) {
@@ -22,11 +31,8 @@
 </script>
 
 <div class="cards" >			
-    {#each tools as tool}        
-        {#if hasNiche(tool, "niches", nicheFilter, hasNiche) 
-            && meetsFilterCriteria(tool, "pricing", pricingFilter)
-            && meetsFilterCriteria(tool, "license", licenseFilter)
-            }							
+    {#each tools as tool}                          
+        {#if meetsFilters(currentFilters, tool)}			            		            
             <Card tool={tool} />				
         {/if}
     {/each} 

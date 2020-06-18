@@ -34,7 +34,7 @@
 	
 	export let currentFilters = {};
 	
-	$: updateUrls(currentFilters);		
+	$: updateUrlParams(currentFilters);		
 
 	Object.keys(availableFilters).forEach(function (filterName) {
 		const filterDef = availableFilters[filterName];
@@ -45,14 +45,14 @@
 		currentFilters[filterName] = filter;
 	})
 	
-	function updateUrls(currentFilters) {		
+	function updateUrlParams(currentFilters) {		
 		Object.keys(currentFilters).forEach(function (filterName) {
 			const currentFilter = currentFilters[filterName];
-			updateUrl(currentFilter.param, currentFilter.value);
+			updateUrlParam(currentFilter.param, currentFilter.value);
 		})
 	}
 
-	function updateUrl(filterParam, filterValue) {		
+	function updateUrlParam(filterParam, filterValue) {		
 		if(typeof window !== 'undefined') {
 		const params = new URLSearchParams(window.location.search);		
 		params.set(filterParam, filterValue);
@@ -100,5 +100,5 @@
 		<RadioGroup options={availableFilters[availableFilterKey].values} bind:activeOption={currentFilters[availableFilterKey].value} />
 		{/each}
 	</div>
-	<ToolList tools={tools} nicheFilter={currentFilters.niche.value} pricingFilter={currentFilters.pricing.value} licenseFilter={currentFilters.license.value} />
+	<ToolList tools={tools} currentFilters={currentFilters} } />
 </div>
