@@ -7,15 +7,14 @@
 
 		filters = await filters.json();
 
-		let availableFilters = {						
-			niches: {values: [], param: "niches"},
-			pricing: {values: [], param: "pricing"},
-			license: {values: [], param: "license"}
-		}
+		let availableFilters = {}
 
-		Object.keys(availableFilters).forEach(async function (filterName) {
-			availableFilters[filterName].values = await filters[filterName];
-		});
+		Object.keys(filters).forEach(function (filterName) {
+			availableFilters[filterName] = {};
+			availableFilters[filterName].values = filters[filterName];
+			availableFilters[filterName].param = filterName;
+		})
+		
 
 		return {
 			tools,
@@ -93,7 +92,7 @@
 	</div>
 </div>
 <div id="tools">
-	<div class="niches">
+	<div class="toolFilters">
 		<h3>Find tools</h3>
 		{#each Object.keys(availableFilters) as availableFilterKey}
 		<h4>{availableFilterKey}</h4>
