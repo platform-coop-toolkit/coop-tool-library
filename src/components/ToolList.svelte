@@ -18,10 +18,9 @@
         }         
     }
 
-    $: updateTools(currentFilters);		
+    $: updateFilteredTools(currentFilters);		
 
-    function updateTools() {
-        console.log("updateToolsList");
+    function updateFilteredTools() {    
         filteredTools = tools.filter(function(tool) {
             return meetsFilters(currentFilters, tool);
         });
