@@ -1,7 +1,18 @@
 const fetch = require('node-fetch');
 
 import processNiches from '../_helpers/process-niches';
-import processPricings from '../_helpers/process-pricings';
+
+function reducePropToStringArray(json, prop) {
+    return json.reduce(function(accumulator, currentValue) {
+        const fragment = currentValue[prop];
+        const newValues = [];
+        if (fragment && !accumulator.includes(fragment)) {
+            newValues.push(fragment);
+        }    
+        return [...accumulator, ...newValues];
+    }, ['All']).sort();
+    
+}
 
 export async function get(req, res, next) {
     let filters = {
@@ -17,7 +28,7 @@ export async function get(req, res, next) {
 		.then(result => result.json())
 		.then(json => {
             niches = json.reduce(processNiches, ['All']).sort();  
-            pricings = json.reduce(processPricings, ['All']).sort();
+            pricings = reducePropToStringArray(json, "pricing");            
         });
         filters.niches = niches;
         filters.pricings = pricings;

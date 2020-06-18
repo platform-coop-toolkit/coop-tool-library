@@ -25,7 +25,7 @@
 
 	import { stores } from '@sapper/app';
 	const { page } = stores();
-
+		
 	export let nicheParam = $page.query.niche;	
 	export let nicheFilter = nicheParam ? nicheParam : "All";
 
