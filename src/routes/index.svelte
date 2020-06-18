@@ -3,8 +3,11 @@
 		let tools = await this.fetch(`tools.json`);
 		tools = await tools.json();
 
-		let niches = await this.fetch(`niches.json`);
-		niches = await niches.json();
+		let filters = await this.fetch(`filters.json`);
+
+		filters = await filters.json();
+
+		let niches = await filters.niches;
 
 		return {
 			tools,
