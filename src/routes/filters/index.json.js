@@ -21,22 +21,13 @@ export async function get(req, res, next) {
         licenses: []
     };
 
-    let niches = [];
-    
-    let pricings = [];
-
-    let licenses = [];
-
 	await fetch('https://demo.directory.platform.coop/api/tools/')
 		.then(result => result.json())
 		.then(json => {
-            niches = json.reduce(processNiches, ['All']).sort();  
-            pricings = reducePropToStringArray(json, "pricing");            
-            licenses = reducePropToStringArray(json, "license");            
+            filters.niches = json.reduce(processNiches, ['All']).sort();  
+            filters.pricings = reducePropToStringArray(json, "pricing");            
+            filters.licenses = reducePropToStringArray(json, "license");            
         });
-        filters.niches = niches;
-        filters.pricings = pricings;
-        filters.licenses = licenses;
 
 	if (filters.niches !== []) {
 		res.setHeader('Content-Type', 'application/json');

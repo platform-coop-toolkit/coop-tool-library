@@ -7,33 +7,46 @@
 
 		filters = await filters.json();
 
-		let niches = await filters.niches;
-		let pricings = await filters.pricings;
+		let availableFilters = {
+			niches: {values: []},
+			pricings: {values: []},
+			licenses: {values: []}
+		}
+
+		Object.keys(availableFilters).forEach(async function (filterName) {
+			availableFilters[filterName].values = await filters[filterName];
+		});
 
 		return {
 			tools,
-			niches,
-			pricings
+			availableFilters
 		}
 	}
 </script>
 
 <script>
 	export let tools;
-	export let niches;	
-	export let pricings;
-
+	
 	import { stores } from '@sapper/app';
 	const { page } = stores();
+
+	export let availableFilters;
+	
+	export let niches = availableFilters.niches.values;	
+	export let pricings = availableFilters.pricings.values;
+	export let licenses = availableFilters.licenses.values;
 		
 	export let nicheParam = $page.query.niche;	
 	export let nicheFilter = nicheParam ? nicheParam : "All";
+	$: updateUrl("niche", nicheFilter);
 
 	export let pricingParam = $page.query.pricing;
 	export let pricingFilter = pricingParam ? pricingParam : "All";
+	$: updateUrl("pricing", pricingFilter);	
 
-	$: updateUrl("niche", nicheFilter);
-	$: updateUrl("pricing", pricingFilter);
+	export let licenseParam = $page.query.license;
+	export let licenseFilter = licenseParam ? licenseParam : "All";
+	$: updateUrl("license", licenseFilter);	
 
 	function updateUrl(filterParam, filterValue) {		
 		if(typeof window !== 'undefined') {
@@ -82,6 +95,8 @@
 			<RadioGroup options={niches} bind:activeOption={nicheFilter} />
 		<h4>Pricing</h4>			
 			<RadioGroup options={pricings} bind:activeOption={pricingFilter} />
+		<h4>License</h4>			
+			<RadioGroup options={licenses} bind:activeOption={licenseFilter} />			
 	</div>
-	<ToolList tools={tools} nicheFilter={nicheFilter} pricingFilter={pricingFilter} />
+	<ToolList tools={tools} nicheFilter={nicheFilter} pricingFilter={pricingFilter} licenseFilter={licenseFilter} />
 </div>

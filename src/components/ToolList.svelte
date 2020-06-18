@@ -2,6 +2,7 @@
     export let tools = [];
     export let nicheFilter = 'All';
     export let pricingFilter = 'All';
+    export let licenseFilter = 'All';
 
     import Card from './Card.svelte';
 
@@ -22,7 +23,10 @@
 
 <div class="cards" >			
     {#each tools as tool}        
-        {#if hasNiche(tool, "niches", nicheFilter, hasNiche) && meetsFilterCriteria(tool, "pricing", pricingFilter)}							
+        {#if hasNiche(tool, "niches", nicheFilter, hasNiche) 
+            && meetsFilterCriteria(tool, "pricing", pricingFilter)
+            && meetsFilterCriteria(tool, "license", licenseFilter)
+            }							
             <Card tool={tool} />				
         {/if}
     {/each} 
