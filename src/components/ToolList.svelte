@@ -1,6 +1,7 @@
 <script>
     export let tools = [];
     export let currentFilters = {};
+    export let filteredTools = [];
 
     import Card from './Card.svelte';
 
@@ -15,6 +16,15 @@
                 return tool.languages.includes(filterValue);
             } else return false;
         }         
+    }
+
+    $: updateTools(currentFilters);		
+
+    function updateTools() {
+        console.log("updateToolsList");
+        filteredTools = tools.filter(function(tool) {
+            return meetsFilters(currentFilters, tool);
+        });
     }
 
     function meetsFilters(filters, tool) {
@@ -42,9 +52,9 @@
 </script>
 
 <div class="cards" >			
-    {#each tools as tool}                          
-        {#if meetsFilters(currentFilters, tool)}			            		            
-            <Card tool={tool} />				
-        {/if}
+    {#each filteredTools as tool}                                  			            		                        
+        <Card tool={tool} />
+    {:else}				        
+        Sorry, no matching results.
     {/each} 
 </div>
