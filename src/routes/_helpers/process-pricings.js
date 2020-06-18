@@ -3,7 +3,6 @@ module.exports = (accumulator, currentValue) => {
     const newPricings = [];
     if (fragment && !accumulator.includes(fragment)) {
         newPricings.push(fragment);
-    }
-    console.log(accumulator, newPricings)
+    }    
     return [...accumulator, ...newPricings];
 };

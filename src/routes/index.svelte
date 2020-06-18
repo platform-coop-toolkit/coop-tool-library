@@ -8,10 +8,12 @@
 		filters = await filters.json();
 
 		let niches = await filters.niches;
+		let pricings = await filters.pricings;
 
 		return {
 			tools,
-			niches
+			niches,
+			pricings
 		}
 	}
 </script>
@@ -19,21 +21,24 @@
 <script>
 	export let tools;
 	export let niches;	
+	export let pricings;
 
 	import { stores } from '@sapper/app';
 	const { page } = stores();
 
-	export let nicheParam = $page.query.niche;
-	
+	export let nicheParam = $page.query.niche;	
 	export let nicheFilter = nicheParam ? nicheParam : "All";
 
-	$: updateUrl(nicheFilter);
+	export let pricingParam = $page.query.pricing;
+	export let pricingFilter = pricingParam ? pricingParam : "All";
 
-	function updateUrl(nicheFilter) {		
+	$: updateUrl("niche", nicheFilter);
+	$: updateUrl("pricing", pricingFilter);
+
+	function updateUrl(filterParam, filterValue) {		
 		if(typeof window !== 'undefined') {
-		const params = new URLSearchParams(window.location.search);
-		console.log(nicheFilter);
-		params.set("niche", nicheFilter);
+		const params = new URLSearchParams(window.location.search);		
+		params.set(filterParam, filterValue);
 			window.history.pushState({}, "", decodeURIComponent(`${window.location.pathname}?${params}`));
 		}
 	}
@@ -73,7 +78,10 @@
 <div id="tools">
 	<div class="niches">
 		<h3>Find tools</h3>
-		<RadioGroup options={niches} bind:activeOption={nicheFilter} />
+		<h4>Niche</h4>
+			<RadioGroup options={niches} bind:activeOption={nicheFilter} />
+		<h4>Pricing</h4>			
+			<RadioGroup options={pricings} bind:activeOption={pricingFilter} />
 	</div>
-	<ToolList tools={tools} nicheFilter={nicheFilter} />
+	<ToolList tools={tools} nicheFilter={nicheFilter} pricingFilter={pricingFilter} />
 </div>
