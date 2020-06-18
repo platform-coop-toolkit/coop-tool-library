@@ -20,14 +20,14 @@ export async function get(req, res, next) {
         pricing: [],
         license: [],
         niches: [],
-        // languages: []
+        languages: []
     };
 
 	await fetch('https://demo.directory.platform.coop/api/tools/')
 		.then(result => result.json())
 		.then(json => {
             filters.niches = json.reduce(processNiches, ['All']).sort();  
-            filters.languages = json.reduce(processLanguages, ['Any']).sort();
+            filters.languages = json.reduce(processLanguages, ['All']).sort();
             filters.pricing = reducePropToStringArray(json, "pricing");            
             filters.license = reducePropToStringArray(json, "license");            
         });        

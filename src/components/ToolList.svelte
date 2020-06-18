@@ -10,7 +10,7 @@
             else return Object.keys(tool.niches).includes(filterValue);    
         },
         languages: function(tool, propToCheck, filterValue) {
-            if(filterValue === 'Any') return true;
+            if(filterValue === 'All') return true;
             if(tool.languages) {
                 return tool.languages.includes(filterValue);
             } else return false;
