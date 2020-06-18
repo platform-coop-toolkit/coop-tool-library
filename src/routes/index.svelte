@@ -8,9 +8,9 @@
 		filters = await filters.json();
 
 		let availableFilters = {
-			niches: {values: []},
-			pricings: {values: []},
-			licenses: {values: []}
+			niche: {values: [], param: "niche"},
+			pricing: {values: [], param: "pricing"},
+			license: {values: [], param: "license"}
 		}
 
 		Object.keys(availableFilters).forEach(async function (filterName) {
@@ -30,23 +30,24 @@
 	import { stores } from '@sapper/app';
 	const { page } = stores();
 
-	export let availableFilters;
+	export let availableFilters;	
 	
-	export let niches = availableFilters.niches.values;	
-	export let pricings = availableFilters.pricings.values;
-	export let licenses = availableFilters.licenses.values;
+	export let currentFilters = {};
+
+	Object.keys(availableFilters).forEach(function (filterName) {
+		const filterDef = availableFilters[filterName];
+		const filter = {
+			param: filterDef.param,
+			value: $page.query[filterDef.param] ? $page.query[filterDef.param] : "All"
+		}		
+		currentFilters[filterName] = filter;
+	})
+	
+	$: updateUrl("niche", currentFilters.niche.value);
 		
-	export let nicheParam = $page.query.niche;	
-	export let nicheFilter = nicheParam ? nicheParam : "All";
-	$: updateUrl("niche", nicheFilter);
-
-	export let pricingParam = $page.query.pricing;
-	export let pricingFilter = pricingParam ? pricingParam : "All";
-	$: updateUrl("pricing", pricingFilter);	
-
-	export let licenseParam = $page.query.license;
-	export let licenseFilter = licenseParam ? licenseParam : "All";
-	$: updateUrl("license", licenseFilter);	
+	$: updateUrl("pricing", currentFilters.pricing.value);	
+		
+	$: updateUrl("license", currentFilters.license.value);		
 
 	function updateUrl(filterParam, filterValue) {		
 		if(typeof window !== 'undefined') {
@@ -91,12 +92,10 @@
 <div id="tools">
 	<div class="niches">
 		<h3>Find tools</h3>
-		<h4>Niche</h4>
-			<RadioGroup options={niches} bind:activeOption={nicheFilter} />
-		<h4>Pricing</h4>			
-			<RadioGroup options={pricings} bind:activeOption={pricingFilter} />
-		<h4>License</h4>			
-			<RadioGroup options={licenses} bind:activeOption={licenseFilter} />			
+		{#each Object.keys(availableFilters) as availableFilterKey}
+		<h4>{availableFilterKey}</h4>
+		<RadioGroup options={availableFilters[availableFilterKey].values} bind:activeOption={currentFilters[availableFilterKey].value} />
+		{/each}
 	</div>
-	<ToolList tools={tools} nicheFilter={nicheFilter} pricingFilter={pricingFilter} licenseFilter={licenseFilter} />
+	<ToolList tools={tools} nicheFilter={currentFilters.niche.value} pricingFilter={currentFilters.pricing.value} licenseFilter={currentFilters.license.value} />
 </div>
