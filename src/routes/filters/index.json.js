@@ -27,7 +27,7 @@ export async function get(req, res, next) {
 		.then(result => result.json())
 		.then(json => {
             filters.niches = json.reduce(processNiches, ['All']).sort();  
-            // filters.languages = json.reduce(processLanguages, ['Any']).sort();
+            filters.languages = json.reduce(processLanguages, ['Any']).sort();
             filters.pricing = reducePropToStringArray(json, "pricing");            
             filters.license = reducePropToStringArray(json, "license");            
         });        
