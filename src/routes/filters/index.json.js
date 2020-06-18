@@ -1,6 +1,7 @@
 const fetch = require('node-fetch');
 
 import processNiches from '../_helpers/process-niches';
+import processLanguages from '../_helpers/process-languages';
 
 function reducePropToStringArray(json, prop) {
     return json.reduce(function(accumulator, currentValue) {
@@ -18,13 +19,15 @@ export async function get(req, res, next) {
     let filters = {        
         pricing: [],
         license: [],
-        niches: []
+        niches: [],
+        // languages: []
     };
 
 	await fetch('https://demo.directory.platform.coop/api/tools/')
 		.then(result => result.json())
 		.then(json => {
             filters.niches = json.reduce(processNiches, ['All']).sort();  
+            // filters.languages = json.reduce(processLanguages, ['Any']).sort();
             filters.pricing = reducePropToStringArray(json, "pricing");            
             filters.license = reducePropToStringArray(json, "license");            
         });        
