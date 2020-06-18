@@ -7,8 +7,8 @@
 
 		filters = await filters.json();
 
-		let availableFilters = {
-			niche: {values: [], param: "niche"},
+		let availableFilters = {						
+			niches: {values: [], param: "niches"},
 			pricing: {values: [], param: "pricing"},
 			license: {values: [], param: "license"}
 		}
@@ -30,7 +30,7 @@
 	import { stores } from '@sapper/app';
 	const { page } = stores();
 
-	export let availableFilters;	
+	export let availableFilters = {};	
 	
 	export let currentFilters = {};
 	
@@ -100,5 +100,5 @@
 		<RadioGroup options={availableFilters[availableFilterKey].values} bind:activeOption={currentFilters[availableFilterKey].value} />
 		{/each}
 	</div>
-	<ToolList tools={tools} currentFilters={currentFilters} } />
+	<ToolList tools={tools} currentFilters={currentFilters} />
 </div>

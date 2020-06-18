@@ -13,7 +13,7 @@
 
     function meetsFilters(filters, tool) {
 
-        if(meetsFilterCriteria(tool, "niches", filters.niche.value) 
+        if(meetsFilterCriteria(tool, "niches", filters.niches.value) 
             && meetsFilterCriteria(tool, "pricing", filters.pricing.value)
             && meetsFilterCriteria(tool, "license", filters.license.value)) {
                 return true;

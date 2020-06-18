@@ -15,10 +15,10 @@ function reducePropToStringArray(json, prop) {
 }
 
 export async function get(req, res, next) {
-    let filters = {
-        niche: [],
+    let filters = {        
         pricing: [],
-        license: []
+        license: [],
+        niches: []
     };
 
     let niches = [];
@@ -33,12 +33,12 @@ export async function get(req, res, next) {
             niches = json.reduce(processNiches, ['All']).sort();  
             pricings = reducePropToStringArray(json, "pricing");            
             licenses = reducePropToStringArray(json, "license");            
-        });
-        filters.niche = niches;
+        });        
+        filters.niches = niches;
         filters.pricing = pricings;
         filters.license = licenses;
 
-	if (filters.niches !== []) {
+	if (filters !== []) {
 		res.setHeader('Content-Type', 'application/json');
 		res.end(JSON.stringify(filters));
 	} else {
