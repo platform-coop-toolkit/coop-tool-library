@@ -33,6 +33,8 @@
 	export let availableFilters;	
 	
 	export let currentFilters = {};
+	
+	$: updateUrls(currentFilters);		
 
 	Object.keys(availableFilters).forEach(function (filterName) {
 		const filterDef = availableFilters[filterName];
@@ -43,11 +45,12 @@
 		currentFilters[filterName] = filter;
 	})
 	
-	$: updateUrl("niche", currentFilters.niche.value);
-		
-	$: updateUrl("pricing", currentFilters.pricing.value);	
-		
-	$: updateUrl("license", currentFilters.license.value);		
+	function updateUrls(currentFilters) {		
+		Object.keys(currentFilters).forEach(function (filterName) {
+			const currentFilter = currentFilters[filterName];
+			updateUrl(currentFilter.param, currentFilter.value);
+		})
+	}
 
 	function updateUrl(filterParam, filterValue) {		
 		if(typeof window !== 'undefined') {
