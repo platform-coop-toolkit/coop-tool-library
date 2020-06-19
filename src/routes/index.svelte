@@ -11,8 +11,9 @@
 
 		Object.keys(filters).forEach(function (filterName) {
 			availableFilters[filterName] = {};
-			availableFilters[filterName].values = filters[filterName];
+			availableFilters[filterName].values = filters[filterName].values;
 			availableFilters[filterName].param = filterName;
+			availableFilters[filterName].type = filters[filterName].type;
 		})
 		
 
@@ -39,7 +40,8 @@
 		const filterDef = availableFilters[filterName];
 		const filter = {
 			param: filterDef.param,
-			value: $page.query[filterDef.param] ? $page.query[filterDef.param] : "All"
+			value: $page.query[filterDef.param] ? $page.query[filterDef.param] : "All",
+			multiValue: null
 		}		
 		currentFilters[filterName] = filter;
 	})
@@ -58,8 +60,9 @@
 			window.history.pushState({}, "", decodeURIComponent(`${window.location.pathname}?${params}`));
 		}
 	}
-
+	
 	import Card from '../components/Card.svelte';
+	import CheckboxGroup from '../components/CheckboxGroup.svelte';
 	import RadioGroup from '../components/RadioGroup.svelte';
 	import ToolList from '../components/ToolList.svelte';
 
@@ -91,13 +94,20 @@
 		</div>
 	</div>
 </div>
-<div id="tools">
+
+<div id="tools">	
 	<div class="toolFilters">
 		<h3>Find tools</h3>
 		{#each Object.keys(availableFilters) as availableFilterKey}
 		<h4>{availableFilterKey}</h4>
-		<RadioGroup options={availableFilters[availableFilterKey].values} bind:activeOption={currentFilters[availableFilterKey].value} />
+			{#if availableFilters[availableFilterKey].type === "exclusive"}
+				<RadioGroup options={availableFilters[availableFilterKey].values} bind:activeOption={currentFilters[availableFilterKey].value} />
+			{/if}
+			{#if availableFilters[availableFilterKey].type === "inclusive"}
+				<CheckboxGroup idPrefix={availableFilterKey} options={availableFilters[availableFilterKey].values} activeOptions={currentFilters[availableFilterKey].value.split("|")} bind:activeOptionsAsString={currentFilters[availableFilterKey].value} />		
+			{/if}			
 		{/each}
 	</div>
-	<ToolList tools={tools} currentFilters={currentFilters} />
+	<ToolList tools={tools} currentFilters={currentFilters} />	
+	
 </div>

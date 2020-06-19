@@ -12,8 +12,15 @@
         },
         languages: function(tool, propToCheck, filterValue) {
             if(filterValue === 'All') return true;
+            let matches = false;
             if(tool.languages) {
-                return tool.languages.includes(filterValue);
+                let desiredValues = filterValue.split("|");
+                desiredValues.forEach(function (desiredValue) {
+                    if(tool.languages.includes(desiredValue)) {
+                        matches = true;
+                    };
+                });
+                return matches;
             } else return false;
         }         
     }
@@ -45,7 +52,11 @@
             return specialChecks[propToCheck](tool, propToCheck, filterValue);
         }
         if(filterValue === 'All') return true;
-        else return tool[propToCheck] === filterValue;
+        else {
+            // Split orables to array
+            let desiredValues = filterValue.split("|");
+            return desiredValues.includes(tool[propToCheck]);
+        }
     }
         
 </script>

@@ -17,19 +17,19 @@ function reducePropToStringArray(json, prop) {
 
 export async function get(req, res, next) {
     let filters = {        
-        pricing: [],
-        license: [],
-        niches: [],
-        languages: []
+        pricing: {values: [], type: "inclusive"},
+        license: {values: [], type: "inclusive"},
+        niches: {values: [], type: "exclusive"},
+        languages: {values: [], type: "inclusive"}
     };
 
 	await fetch('https://demo.directory.platform.coop/api/tools/')
 		.then(result => result.json())
 		.then(json => {
-            filters.niches = json.reduce(processNiches, ['All']).sort();  
-            filters.languages = json.reduce(processLanguages, ['All']).sort();
-            filters.pricing = reducePropToStringArray(json, "pricing");            
-            filters.license = reducePropToStringArray(json, "license");            
+            filters.niches.values = json.reduce(processNiches, ['All']).sort();  
+            filters.languages.values = json.reduce(processLanguages, ['All']).sort();
+            filters.pricing.values = reducePropToStringArray(json, "pricing");            
+            filters.license.values = reducePropToStringArray(json, "license");            
         });        
 
 	if (filters !== []) {
