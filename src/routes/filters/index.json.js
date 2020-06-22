@@ -11,7 +11,7 @@ function reducePropToStringArray(json, prop) {
             newValues.push(fragment);
         }    
         return [...accumulator, ...newValues];
-    }, ['All']).sort();
+    }, []).sort();
     
 }
 
@@ -26,8 +26,8 @@ export async function get(req, res, next) {
 	await fetch('https://demo.directory.platform.coop/api/tools/')
 		.then(result => result.json())
 		.then(json => {
-            filters.niches.values = json.reduce(processNiches, ['All']).sort();  
-            filters.languages.values = json.reduce(processLanguages, ['All']).sort();
+            filters.niches.values = json.reduce(processNiches, []).sort();  
+            filters.languages.values = json.reduce(processLanguages, []).sort();
             filters.pricing.values = reducePropToStringArray(json, "pricing");            
             filters.license.values = reducePropToStringArray(json, "license");            
         });        
