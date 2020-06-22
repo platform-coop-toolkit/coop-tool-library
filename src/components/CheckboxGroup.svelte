@@ -2,6 +2,7 @@
     import slugify from 'slugify';
     export let options;
     export let idPrefix;
+    export const allValue = "All"
 
     export let activeOptions = [];
 
@@ -10,9 +11,10 @@
     $: handleActiveOptions(activeOptions);
 
     function handleActiveOptions(activeOptions) {        
-        activeOptionsAsString = activeOptions.join("|");   
-        console.log("activeOptions changed")
-        console.log(activeOptionsAsString);
+        if(activeOptions.includes(allValue)) {            
+            activeOptions = [allValue];
+        }
+        activeOptionsAsString = activeOptions.join("|");           
     }
 
 </script>
