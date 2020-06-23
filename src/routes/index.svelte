@@ -95,19 +95,19 @@
 	</div>
 </div>
 
-<div id="tools">	
-	<div class="toolFilters">
-		<h3>Find tools</h3>
-		{#each Object.keys(availableFilters) as availableFilterKey}
-		<h4>{availableFilterKey}</h4>
-			{#if availableFilters[availableFilterKey].type === "exclusive"}
-				<RadioGroup options={availableFilters[availableFilterKey].values} bind:activeOption={currentFilters[availableFilterKey].value} />
-			{/if}
-			{#if availableFilters[availableFilterKey].type === "inclusive"}
-				<CheckboxGroup idPrefix={availableFilterKey} options={availableFilters[availableFilterKey].values} activeOptions={currentFilters[availableFilterKey].value.split("|")} bind:activeOptionsAsString={currentFilters[availableFilterKey].value} />		
-			{/if}			
-		{/each}
-	</div>
-	<ToolList tools={tools} currentFilters={currentFilters} />	
-	
+<div class="filter-wrapper">
+	<h3>Find tools</h3>
+	{#each Object.keys(availableFilters) as availableFilterKey}
+	<h4>{availableFilterKey}</h4>
+		{#if availableFilters[availableFilterKey].type === "exclusive"}
+			<RadioGroup options={availableFilters[availableFilterKey].values} bind:activeOption={currentFilters[availableFilterKey].value} />
+		{/if}
+		{#if availableFilters[availableFilterKey].type === "inclusive"}
+			<CheckboxGroup idPrefix={availableFilterKey} options={availableFilters[availableFilterKey].values} activeOptions={currentFilters[availableFilterKey].value.split("|")} bind:activeOptionsAsString={currentFilters[availableFilterKey].value} />		
+		{/if}			
+	{/each}
+</div>
+
+<div class="resource-list">	
+	<ToolList tools={tools} currentFilters={currentFilters} />		
 </div>
