@@ -1,32 +1,47 @@
 <script>
     import slugify from 'slugify';
     export let options;
-    export let idPrefix;
-    export const allValue = "All"
-    export const activeOptionsSeparator = "|"
+    export let filterTitle;
+    export let idPrefix = filterTitle;    
+    export const activeFiltersSeparator = "|"    
+    
+    export let activeFilters = [];
 
-    export let activeOptions = [];
+    export let checkedOptions = [];
 
-    export let activeOptionsAsString = null;
+    export let activeFiltersAsString = null;
 
-    // Puts all allValue value in the front of the UI
-    export let displayedOptions = [allValue].concat(options);
-
-    $: handleActiveOptions(activeOptions);
-
-    function handleActiveOptions(activeOptions) {        
-        if(activeOptions.includes(allValue)) {            
-            activeOptions = [allValue];
+    $: handleCheckedOptions(checkedOptions);
+    
+    function handleCheckedOptions(checkedOptions) {  
+        if(checkedOptions.length > 0) {
+            activeFilters = [].concat(checkedOptions);            
+        } else {
+            activeFilters = ["All"];
         }
-        activeOptionsAsString = activeOptions.join(activeOptionsSeparator);           
+        activeFiltersAsString = activeFilters.join(activeFiltersSeparator);           
+    }
+
+    function handleDeSelectAllClick() {                             
+            checkedOptions = [];        
     }
 
 </script>
-<ul class="input-group checkbox">
 
-    {#each displayedOptions as option}
-        <li>
-            <input bind:group={activeOptions} id={idPrefix + "-checkbox-" +slugify(option, {lower: true})} type="checkbox" name="checkboxes" value="{option}" /><label for={idPrefix + "-checkbox-" + slugify(option, {lower: true})}>{option}</label>
-        </li>    
-    {/each}        
-</ul>
+<div class="accordion accordion--filter-list">
+    <div class="accordion__pane">
+        <p class="accordion__heading">{filterTitle}</p>
+        <div class="accordion__content">
+       
+        
+            <button id={idPrefix + "-all-facets"} type="button" class="button button--borderless" on:click={handleDeSelectAllClick}><span class="button__label">Deselect All<span class="screen-reader-text"> {filterTitle}</span></span></button>
+            {#each options as option}
+                <ul class="input-group input-group__parent">
+                    <li>
+                        <input bind:group={checkedOptions} id={idPrefix + "-checkbox-" +slugify(option, {lower: true})} type="checkbox" name="checkboxes" value="{option}" /><label for={idPrefix + "-checkbox-" + slugify(option, {lower: true})}>{option}</label>
+                    </li>
+                </ul>
+            {/each}
+        </div>
+    </div>
+</div>

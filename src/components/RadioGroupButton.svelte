@@ -33,7 +33,7 @@ function handleKeyDown(event) {
 }
 </script>
 
-<button id="{id}" role="radio" type="button" aria-checked={checked} class="button button--radio" on:click={() => checkSelection(label)} on:keydown={(event) => handleKeyDown(event)}>
+<button id="{id}" role="radio" type="button" aria-checked={checked} class="button button--radio button--inverse" on:click={() => checkSelection(label)} on:keydown={(event) => handleKeyDown(event)}>
 	{label}
 </button>
 

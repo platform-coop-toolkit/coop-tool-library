@@ -90,22 +90,36 @@
 					<a href="/share-tools/">Share your tools</a><br>
 					to help other co-ops find tools
 				</li>
-			</ul>
+			</ul>							
 		</div>
-	</div>
+		<div class="color has-blue-500-background-color">		
+			<h2>View by category</h2>
+			<RadioGroup options={availableFilters.niches.values} bind:activeOption={currentFilters.niches.value} />
+		</div>
+	</div>		
 </div>
 
 <div class="filter-wrapper">
-	<h3>Find tools</h3>
-	{#each Object.keys(availableFilters) as availableFilterKey}
-	<h4>{availableFilterKey}</h4>
-		{#if availableFilters[availableFilterKey].type === "exclusive"}
-			<RadioGroup options={availableFilters[availableFilterKey].values} bind:activeOption={currentFilters[availableFilterKey].value} />
-		{/if}
-		{#if availableFilters[availableFilterKey].type === "inclusive"}
-			<CheckboxGroup idPrefix={availableFilterKey} options={availableFilters[availableFilterKey].values} activeOptions={currentFilters[availableFilterKey].value.split("|")} bind:activeOptionsAsString={currentFilters[availableFilterKey].value} />		
-		{/if}			
-	{/each}
+	
+	<button id="show-filters" type="button" class="button button--borderless"><svg class="icon icon--filter" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+        <use href="/images/filter.svg#filter" />
+    </svg>
+    <span class="button__label">Filter</span></button>
+
+	<div class="filters">
+		<button id="hide-filters" type="button" class="button button--borderless button--inverse"><span class="button__label">Close</span><svg class="icon icon--close" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+				<use href="/images/close.svg#close" />
+			</svg>
+		</button>
+		<form class="form" action="/">
+			<h2 class="h1 screen-reader-text">Filters</h2>
+			{#each Object.keys(availableFilters) as availableFilterKey}	
+				{#if availableFilters[availableFilterKey].type === "inclusive"}					
+					<CheckboxGroup filterTitle={availableFilterKey} options={availableFilters[availableFilterKey].values} checkedOptions={currentFilters[availableFilterKey].value.split("|")} bind:activeFiltersAsString={currentFilters[availableFilterKey].value} />		
+				{/if}			
+			{/each}			
+		</form>
+	</div>	
 </div>
 
 <div class="resource-list">	
