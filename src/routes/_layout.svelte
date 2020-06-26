@@ -18,8 +18,9 @@
 		</div>
 	</div>
 </header>
-
+	
 <div class="wrap container search-results" role="document">
+	
 	<div class="content">
 	<main>
 		<slot></slot>

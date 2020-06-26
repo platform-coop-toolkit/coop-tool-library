@@ -1,7 +1,7 @@
 <script>
     export let tools = [];
     export let currentFilters = {};
-    export let filteredTools = [];
+    export let filteredTools = [];    
 
     import Card from './Card.svelte';
 

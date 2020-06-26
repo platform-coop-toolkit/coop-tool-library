@@ -1,12 +1,13 @@
 @import '../../node_modules/@platform-coop-toolkit/pinecone/src/assets/styles/pinecone.scss';
 
-.view-by-category-wrapper {
-    @include full-width-background;
-    
-    grid-column: 1 / 13;    
+.view-by-category {
+    @include full-width-background();    
+    position: relative;    
+    grid-column: 1 / 13;     
 }
 
-// This seems like it shouldn't be necessary, review rule
+// This seems like it shouldn't be necessary, but filter-wrapper 
+// ends up on top of view-by-category otherwise
 .filter-wrapper {
     grid-row: unset;
 }
