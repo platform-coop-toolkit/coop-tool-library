@@ -60,7 +60,17 @@
 			window.history.pushState({}, "", decodeURIComponent(`${window.location.pathname}?${params}`));
 		}
 	}
+
+	export let filtersExpanded = false;	
+
+	function handleShowFiltersClick() {
+		filtersExpanded = true;
+	}
 	
+	function handleHideFiltersClick() {
+		filtersExpanded = false;
+	}
+
 	import Card from '../components/Card.svelte';
 	import CheckboxGroup from '../components/CheckboxGroup.svelte';
 	import RadioGroup from '../components/RadioGroup.svelte';
@@ -101,13 +111,13 @@
 
 <div class="filter-wrapper">
 	
-	<button id="show-filters" type="button" class="button button--borderless"><svg class="icon icon--filter" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+	<button on:click={handleShowFiltersClick} id="show-filters" type="button" class="button button--borderless"><svg class="icon icon--filter" aria-hidden={filtersExpanded} viewBox="0 0 20 20" focusable="false">
         <use href="/images/filter.svg#filter" />
     </svg>
     <span class="button__label">Filter</span></button>
 
-	<div class="filters">
-		<button id="hide-filters" type="button" class="button button--borderless button--inverse"><span class="button__label">Close</span><svg class="icon icon--close" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+	<div class="filters{filtersExpanded ? " filters--expanded" : ""}">
+		<button on:click={handleHideFiltersClick} id="hide-filters" type="button" class="button button--borderless button--inverse"><span class="button__label">Close</span><svg class="icon icon--close" aria-hidden={filtersExpanded} viewBox="0 0 20 20" focusable="false">
 				<use href="/images/close.svg#close" />
 			</svg>
 		</button>
