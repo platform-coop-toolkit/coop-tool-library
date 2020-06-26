@@ -34,7 +34,7 @@
 	
 	export let currentFilters = {};
 	
-	$: updateUrlParams(currentFilters);		
+	$: updateUrl(currentFilters);		
 
 	Object.keys(availableFilters).forEach(function (filterName) {
 		const filterDef = availableFilters[filterName];
@@ -46,7 +46,7 @@
 		currentFilters[filterName] = filter;
 	})
 	
-	function updateUrlParams(currentFilters) {		
+	function updateUrl(currentFilters) {		
 		Object.keys(currentFilters).forEach(function (filterName) {
 			const currentFilter = currentFilters[filterName];
 			updateUrlParam(currentFilter.param, currentFilter.value);
