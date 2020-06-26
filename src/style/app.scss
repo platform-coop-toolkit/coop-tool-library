@@ -1,1 +1,12 @@
 @import '../../node_modules/@platform-coop-toolkit/pinecone/src/assets/styles/pinecone.scss';
+
+.view-by-category-wrapper {
+    @include full-width-background;
+    
+    grid-column: 1 / 13;    
+}
+
+// This seems like it shouldn't be necessary, review rule
+.filter-wrapper {
+    grid-row: unset;
+}

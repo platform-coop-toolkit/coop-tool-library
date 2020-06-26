@@ -102,12 +102,15 @@
 				</li>
 			</ul>							
 		</div>
+	</div>		
+</div>
+
+<section class="view-by-category-wrapper">
 		<div class="color has-blue-500-background-color">		
 			<h2>View by category</h2>
 			<RadioGroup options={availableFilters.niches.values} bind:activeOption={currentFilters.niches.value} />
 		</div>
-	</div>		
-</div>
+</section>		
 
 <div class="filter-wrapper">
 	
