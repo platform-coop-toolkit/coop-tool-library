@@ -122,7 +122,7 @@
 			</svg>
 		</button>
 		<form class="form" action="/">
-			<h2 class="h1 screen-reader-text">Filters</h2>
+			<h2 class="h1">Filters</h2>
 			{#each Object.keys(availableFilters) as availableFilterKey}	
 				{#if availableFilters[availableFilterKey].type === "inclusive"}					
 					<CheckboxGroup filterTitle={availableFilterKey} options={availableFilters[availableFilterKey].values} checkedOptions={currentFilters[availableFilterKey].value.split("|")} bind:activeFiltersAsString={currentFilters[availableFilterKey].value} />		

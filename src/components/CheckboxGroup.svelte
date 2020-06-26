@@ -43,7 +43,7 @@
         <div class="accordion__content">
        
         
-            <button id={idPrefix + "-all-facets"} type="button" class="button button--borderless" on:click={handleDeSelectAllClick}><span class="button__label">Deselect All<span class="screen-reader-text"> {filterTitle}</span></span></button>
+            <button id={"deselect-" + idPrefix} type="button" class="button button--borderless" on:click={handleDeSelectAllClick}><span class="button__label">Deselect All<span class="screen-reader-text"> {filterTitle}</span></span></button>
             {#each options as option}
                 <ul class="input-group input-group__parent">
                     <li>
