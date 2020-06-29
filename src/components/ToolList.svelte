@@ -2,6 +2,7 @@
     export let tools = [];
     export let currentFilters = {};
     export let filteredTools = [];    
+    export let searchTerm = "";
 
     import Card from './Card.svelte';
 
@@ -25,11 +26,11 @@
         }         
     }
 
-    $: updateFilteredTools(currentFilters);		
+    $: updateFilteredTools(currentFilters, searchTerm);		
 
     function updateFilteredTools() {    
         filteredTools = tools.filter(function(tool) {
-            return meetsFilters(currentFilters, tool);
+            return (meetsFilters(currentFilters, tool) && meetsSearchTerm(searchTerm, tool));
         });
     }
 
@@ -45,6 +46,24 @@
         });                
 
         return meets;          
+    }
+
+    function meetsSearchTerm(searchTerm, tool) {
+        if (searchTerm === "") {
+            return true;
+        }
+        let meets = false;
+        let searchFields = [
+            "name",
+            "description"
+        ]
+        searchFields.forEach(function (searchField) {
+            if(tool[searchField].toLowerCase().includes(searchTerm.toLowerCase())) {
+                meets = true;
+            }
+        })
+
+        return meets;
     }
 
     function meetsFilterCriteria(tool, propToCheck, filterValue) {                

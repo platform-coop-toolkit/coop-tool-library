@@ -33,8 +33,10 @@
 	export let availableFilters = {};	
 	
 	export let currentFilters = {};
+
+	export let searchTerm = $page.query["s"] ? $page.query["s"] : "";
 	
-	$: updateUrl(currentFilters);		
+	$: updateFilterUrl(currentFilters);		
 
 	Object.keys(availableFilters).forEach(function (filterName) {
 		const filterDef = availableFilters[filterName];
@@ -46,17 +48,23 @@
 		currentFilters[filterName] = filter;
 	})
 	
-	function updateUrl(currentFilters) {		
+	$: updateSearchUrl(searchTerm);
+
+	function updateSearchUrl(searchTerm) {
+		updateUrlParam("s", searchTerm);
+	}
+
+	function updateFilterUrl(currentFilters) {		
 		Object.keys(currentFilters).forEach(function (filterName) {
 			const currentFilter = currentFilters[filterName];
 			updateUrlParam(currentFilter.param, currentFilter.value);
 		})
 	}
 
-	function updateUrlParam(filterParam, filterValue) {		
+	function updateUrlParam(paramName, paramValue) {		
 		if(typeof window !== 'undefined') {
 		const params = new URLSearchParams(window.location.search);		
-		params.set(filterParam, filterValue);
+		params.set(paramName, paramValue);
 			window.history.pushState({}, "", decodeURIComponent(`${window.location.pathname}?${params}`));
 		}
 	}
@@ -106,9 +114,21 @@
 </div>
 
 
-<div class="color has-blue-500-background-color view-by-category">		
-	<h2>View by category</h2>
-	<RadioGroup options={availableFilters.niches.values} bind:activeOption={currentFilters.niches.value} />
+<div class="color has-blue-500-background-color view-by-category">	
+	<form role="search" method="get" class="search-form search-form--inverse" action="/">
+		<label>
+			<span class="screen-reader-text">search</span>
+			<input id="s" name="s" type="search" bind:value={searchTerm} />
+		</label>
+		<button type="submit" class="button button--search"><span class="screen-reader-text">submit search</span><svg class="icon icon--search" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+				<use href="/images/search.svg#search" />
+			</svg>
+		</button>
+	</form>
+	<form class="form" action="/">
+		<h2>View by category</h2>
+		<RadioGroup options={availableFilters.niches.values} bind:activeOption={currentFilters.niches.value} />
+	</form>
 </div>
 
 
@@ -136,5 +156,5 @@
 </div>
 
 <div class="resource-list">	
-	<ToolList tools={tools} currentFilters={currentFilters} />		
+	<ToolList tools={tools} currentFilters={currentFilters} searchTerm={searchTerm} />		
 </div>
