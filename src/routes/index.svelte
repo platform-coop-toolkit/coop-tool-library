@@ -112,7 +112,7 @@
 	</div>		
 </div>
 
-<div class="color has-blue-500-background-color grid-item--full-width">	
+<div class="color has-blue-500-background-color grid-item--full-width-background">	
 	<form role="search" method="get" class="search-form search-form--inverse" action="/">
 		<label>
 			<span class="screen-reader-text">search</span>
