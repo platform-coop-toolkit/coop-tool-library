@@ -1,13 +1,11 @@
 @import '../../node_modules/@platform-coop-toolkit/pinecone/src/assets/styles/pinecone.scss';
 
-.grid-item--full-width-background {
-    @include full-width-background();    
-    position: relative;    
-    grid-column: 1 / 13;    
-    margin-left: -1.875rem;
-    margin-right: -1.875rem;
-    padding-left: 1.875rem;
-    padding-right: 1.875rem;
+.search-container {
+    @include full-width-background(var(--blue-500));        
+    grid-column: 1 / -1; 
+    position: relative;     
+    // On top of the full width background
+    z-index: 0;      
 }
 
 // This seems like it shouldn't be necessary, but filter-wrapper 
