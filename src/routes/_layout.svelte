@@ -21,8 +21,8 @@
 	
 <div class="wrap container search-results" role="document">
 	<div class="content">
-	<main>
-		<slot></slot>
-	</main>
+		<main>
+			<slot></slot>
+		</main>
 	</div>
 </div>

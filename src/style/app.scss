@@ -1,9 +1,11 @@
 @import '../../node_modules/@platform-coop-toolkit/pinecone/src/assets/styles/pinecone.scss';
 
-.view-by-category {
+.grid-item--full-width {
     @include full-width-background();    
     position: relative;    
-    grid-column: 1 / 13;     
+    grid-column: 1 / 13;    
+    margin-left: -1.875rem;
+    margin-right: -1.875rem;
 }
 
 // This seems like it shouldn't be necessary, but filter-wrapper 

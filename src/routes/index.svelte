@@ -78,8 +78,7 @@
 	function handleHideFiltersClick() {
 		filtersExpanded = false;
 	}
-
-	import Card from '../components/Card.svelte';
+	
 	import CheckboxGroup from '../components/CheckboxGroup.svelte';
 	import RadioGroup from '../components/RadioGroup.svelte';
 	import ToolList from '../components/ToolList.svelte';
@@ -113,8 +112,7 @@
 	</div>		
 </div>
 
-
-<div class="color has-blue-500-background-color view-by-category">	
+<div class="color has-blue-500-background-color grid-item--full-width">	
 	<form role="search" method="get" class="search-form search-form--inverse" action="/">
 		<label>
 			<span class="screen-reader-text">search</span>
