@@ -1,18 +1,8 @@
 <script>
     export let tool;
 
-    function fancyConcat(array) {
-        let output;
-        if (array.length > 2) {
-            const lastItem = array.pop();
-            output = array.join(', ');
-            output += `, and ${lastItem}`;
-        } else {
-            output = array.join(' and ');
-        }
+    import fancyConcat from '../_helpers/fancy-concat';
 
-        return output;
-    }
 </script>
 <article class="card" data-niche={tool.niches ? Object.keys(tool.niches).join(' ') : ''}>
     <header>

@@ -1,7 +1,15 @@
 @import '../../node_modules/@platform-coop-toolkit/pinecone/src/assets/styles/pinecone.scss';
 
-.search-container {
+.search-form-container {
     @include full-width-background(var(--blue-500));        
+    grid-column: 1 / -1; 
+    position: relative;     
+    // On top of the full width background
+    z-index: 0;      
+}
+
+.tool-detail-container {
+    @include full-width-background(white);        
     grid-column: 1 / -1; 
     position: relative;     
     // On top of the full width background

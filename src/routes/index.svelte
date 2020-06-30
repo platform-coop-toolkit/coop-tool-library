@@ -112,7 +112,7 @@
 	</div>		
 </div>
 
-<div class="has-blue-500-background-color search-container">	
+<div class="has-blue-500-background-color search-form-container">	
 	<form role="search" method="get" class="search-form search-form--inverse" action="/">
 		<label>
 			<span class="screen-reader-text">search</span>
