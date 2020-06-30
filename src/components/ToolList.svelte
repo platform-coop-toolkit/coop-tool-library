@@ -4,7 +4,7 @@
     export let filteredTools = [];    
     export let searchTerm = "";
 
-    import Card from './Card.svelte';
+    import ToolSummaryCard from './ToolSummaryCard.svelte';
 
     const specialChecks = {
         niches: function(tool, propToCheck, filterValue) {
@@ -82,7 +82,7 @@
 
 <div class="cards" >			
     {#each filteredTools as tool}                                  			            		                        
-        <Card tool={tool} />
+        <ToolSummaryCard tool={tool} />
     {:else}				        
         Sorry, no matching results.
     {/each} 
