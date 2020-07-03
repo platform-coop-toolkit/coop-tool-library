@@ -1,7 +1,14 @@
 const slugify = require('slugify');
 
 module.exports = glossaryEntry => {
-    glossaryEntry.slug = slugify(glossaryEntry.term.toLowerCase());
+    let processedEntry = {};
+        
+    Object.keys(glossaryEntry).forEach(function (key) {        
+        let newKey = key.toLowerCase();
+        processedEntry[newKey] = glossaryEntry[key];
+    })
 
-	return glossaryEntry;
+    processedEntry.slug = slugify(processedEntry.term);
+
+    return processedEntry
 };
