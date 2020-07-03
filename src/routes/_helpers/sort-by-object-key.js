@@ -1,4 +1,4 @@
-function sortByObjectKey (a, b, key) {
+function sortByObjectKey (a, b, key) {	
 	const itemA = a[key].toUpperCase();
 	const itemB = b[key].toUpperCase();
 
@@ -13,4 +13,6 @@ function sortByObjectKey (a, b, key) {
 	return comparison;
 };
 
-exports.byObjectKey = sortByObjectKey;
+module.exports = (a, b, key) => {	
+	return sortByObjectKey(a, b, key);
+};

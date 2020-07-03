@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 import processTools from '../_helpers/process-tools';
-import compareTools from '../_helpers/compare-tools';
+import sortByObjectKey from '../_helpers/sort-by-object-key';
 
 export async function get(req, res, next) {
 	let tools = [];
@@ -9,7 +9,9 @@ export async function get(req, res, next) {
 	await fetch('https://demo.directory.platform.coop/api/tools/')
 		.then(result => result.json())
 		.then(json => {
-			tools = json.map(processTools).sort(compareTools);
+			tools = json.map(processTools).sort(function(a, b) {
+				return sortByObjectKey(a, b, "name");
+			});
 		});
 
 	if (tools !== []) {

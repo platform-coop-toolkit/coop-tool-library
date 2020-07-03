@@ -1,5 +1,5 @@
 import processGlossary from '../_helpers/process-glossary';
-import compareGlossary from '../_helpers/compare-glossary';
+import sortByObjectKey from '../_helpers/sort-by-object-key';
 
 export async function get(req, res, next) {
 	let glossaryRaw = [
@@ -787,7 +787,9 @@ export async function get(req, res, next) {
         }
       ]
 
-  let glossary = glossaryRaw.map(processGlossary).sort(compareGlossary); 
+  let glossary = glossaryRaw.map(processGlossary).sort(function(a,b) {    
+    return sortByObjectKey(a, b, "term");
+  }); 
 
 	if (glossary !== []) {
 		res.setHeader('Content-Type', 'application/json');
