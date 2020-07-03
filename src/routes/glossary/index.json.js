@@ -4,10 +4,10 @@ import sortByObjectKey from '../_helpers/sort-by-object-key';
 export async function get(req, res, next) {
 	let glossaryRaw = [
         {
-          "Category": "Co-op type",
-          "Term": "Consumer co-op",
-          "Glossary definition": "Consumer co-ops are co-ops that are owned by the consumers.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Co-op type",
+          "term": "Consumer co-op",
+          "glossaryDefinition": "Consumer co-ops are co-ops that are owned by the consumers.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -21,10 +21,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Co-op type",
-          "Term": "Cooperative",
-          "Glossary definition": "Cooperatives, or co-ops, are organizations and businesses where members have decision-making power - versus in traditional businesses, where decisions are typically made by shareholders and investors. Members of a cooperative often come together based on a shared goal - economic, social, environmental, or cultural.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Co-op type",
+          "term": "Cooperative",
+          "glossaryDefinition": "Cooperatives, or co-ops, are organizations and businesses where members have decision-making power - versus in traditional businesses, where decisions are typically made by shareholders and investors. Members of a cooperative often come together based on a shared goal - economic, social, environmental, or cultural.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "Coop",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -38,10 +38,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Co-op type",
-          "Term": "Credit union",
-          "Glossary definition": "Credit unions are co-ops that provide traditional banking services, but are owned by the people who bank there.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Co-op type",
+          "term": "Credit union",
+          "glossaryDefinition": "Credit unions are co-ops that provide traditional banking services, but are owned by the people who bank there.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -55,10 +55,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Co-op type",
-          "Term": "Data",
-          "Glossary definition": "Data co-ops are a broad category covering co-ops that run on protocols or distributed ledgers, co-ops that help other co-ops exchange data, co-ops that provide internet infrastructure, or data trusts.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Co-op type",
+          "term": "Data",
+          "glossaryDefinition": "Data co-ops are a broad category covering co-ops that run on protocols or distributed ledgers, co-ops that help other co-ops exchange data, co-ops that provide internet infrastructure, or data trusts.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -72,10 +72,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Co-op type",
-          "Term": "Housing",
-          "Glossary definition": "Housing co-ops are co-ops that supply housing for its members, and can be both for-profit and non-profit. Housing costs are determined by the collective costs of the co-op, and shared equitably among members. (Co-op Creator)",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Co-op type",
+          "term": "Housing",
+          "glossaryDefinition": "Housing co-ops are co-ops that supply housing for its members, and can be both for-profit and non-profit. Housing costs are determined by the collective costs of the co-op, and shared equitably among members. (Co-op Creator)",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -89,10 +89,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Co-op type",
-          "Term": "Multi-stakeholder",
-          "Glossary definition": "Multi-stakeholder co-ops are co-ops that are formed and owned by two or more stakeholder groups. These groups can include workers, consumers, producers, and more.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Co-op type",
+          "term": "Multi-stakeholder",
+          "glossaryDefinition": "Multi-stakeholder co-ops are co-ops that are formed and owned by two or more stakeholder groups. These groups can include workers, consumers, producers, and more.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -106,10 +106,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Co-op type",
-          "Term": "Platform",
-          "Glossary definition": "Platform co-ops are co-ops that use a website, mobile app, or protocol to sell goods or services. The co-op and the platform are owned by workers and users.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Co-op type",
+          "term": "Platform",
+          "glossaryDefinition": "Platform co-ops are co-ops that use a website, mobile app, or protocol to sell goods or services. The co-op and the platform are owned by workers and users.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -123,10 +123,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Co-op type",
-          "Term": "Producer",
-          "Glossary definition": "Producer co-ops (also known as marketing co-ops) is made up of people who generally are in the same sector or conduct the same type of business. They come together to do collective marketing.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Co-op type",
+          "term": "Producer",
+          "glossaryDefinition": "Producer co-ops (also known as marketing co-ops) is made up of people who generally are in the same sector or conduct the same type of business. They come together to do collective marketing.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -140,10 +140,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Co-op type",
-          "Term": "Purchasing",
-          "Glossary definition": "Purchasing co-ops are groups or businesses that come together to purchase services or supplies and lower operational costs.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Co-op type",
+          "term": "Purchasing",
+          "glossaryDefinition": "Purchasing co-ops are groups or businesses that come together to purchase services or supplies and lower operational costs.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -157,10 +157,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Co-op type",
-          "Term": "Social",
-          "Glossary definition": "Social co-ops are created to provide social services; its goal is to provide benefit to the community.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Co-op type",
+          "term": "Social",
+          "glossaryDefinition": "Social co-ops are created to provide social services; its goal is to provide benefit to the community.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -174,10 +174,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Co-op type",
-          "Term": "Worker",
-          "Glossary definition": "Worker co-ops are co-ops that are owned and run by the workers. Not every employee has to be an owner.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Co-op type",
+          "term": "Worker",
+          "glossaryDefinition": "Worker co-ops are co-ops that are owned and run by the workers. Not every employee has to be an owner.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -191,10 +191,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Stages of development",
-          "Term": "Development",
-          "Glossary definition": "When a co-op begins to develop their organization beyond an idea: Member structure is defined, recruitment has been planned, ideas are turned into a prototype and selling mechanisms are being developed and tested. Usually at this point there are initial investors are involved.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Stages of development",
+          "term": "Development",
+          "glossaryDefinition": "When a co-op begins to develop their organization beyond an idea: Member structure is defined, recruitment has been planned, ideas are turned into a prototype and selling mechanisms are being developed and tested. Usually at this point there are initial investors are involved.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -208,10 +208,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Stages of development",
-          "Term": "Expansion",
-          "Glossary definition": "When a co-op is comfortable and can begin thinking about expanding to have financial reserves and dividends, pursuing franchising opportunities, and more.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Stages of development",
+          "term": "Expansion",
+          "glossaryDefinition": "When a co-op is comfortable and can begin thinking about expanding to have financial reserves and dividends, pursuing franchising opportunities, and more.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -225,10 +225,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Stages of development",
-          "Term": "Ideation",
-          "Glossary definition": "When a co-op is testing their business model to make sure their idea works, and starting to recruit founding members.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Stages of development",
+          "term": "Ideation",
+          "glossaryDefinition": "When a co-op is testing their business model to make sure their idea works, and starting to recruit founding members.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -242,10 +242,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Stages of development",
-          "Term": "Operational",
-          "Glossary definition": "When a co-op becomes operational: First paying clients or members using the platform, some income coming in. Potentially some secondary capital with investor members.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Stages of development",
+          "term": "Operational",
+          "glossaryDefinition": "When a co-op becomes operational: First paying clients or members using the platform, some income coming in. Potentially some secondary capital with investor members.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -259,10 +259,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Stages of development",
-          "Term": "Stability",
-          "Glossary definition": "When a co-op breaks even financially: Regular clients are established, cash flow stabilized and covering fixed costs, and growing into new customer segments.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Stages of development",
+          "term": "Stability",
+          "glossaryDefinition": "When a co-op breaks even financially: Regular clients are established, cash flow stabilized and covering fixed costs, and growing into new customer segments.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -276,10 +276,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tech term",
-          "Term": "Free software",
-          "Glossary definition": "Free software is software where anyone can freely view the source code, modify it, and redistribute it. Contrary to the name, free software is not necessarily free of cost.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Tech term",
+          "term": "Free software",
+          "glossaryDefinition": "Free software is software where anyone can freely view the source code, modify it, and redistribute it. Contrary to the name, free software is not necessarily free of cost.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -293,10 +293,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tech term",
-          "Term": "Open source software",
-          "Glossary definition": "Open source software is software with source code that anyone can view and change. Open source software can be both paid and for free.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Tech term",
+          "term": "Open source software",
+          "glossaryDefinition": "Open source software is software with source code that anyone can view and change. Open source software can be both paid and for free.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -310,10 +310,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tech term",
-          "Term": "Proprietary software",
-          "Glossary definition": "Proprietary software is software that only the original authors can view and modify. Proprietary software can be both paid and for free.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "n/a - no tool explanation needed",
+          "category": "Tech term",
+          "term": "Proprietary software",
+          "glossaryDefinition": "Proprietary software is software that only the original authors can view and modify. Proprietary software can be both paid and for free.",
+          "toolExplanation": "n/a - no tool explanation needed",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -327,10 +327,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Accounting",
-          "Glossary definition": "Accounting is the process of keeping financial accounts and records. This can include recording, measuring, and communicating your finances.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Accounting tools help you keep track of your financial accounts and records.",
+          "category": "Tool",
+          "term": "Accounting",
+          "glossaryDefinition": "Accounting is the process of keeping financial accounts and records. This can include recording, measuring, and communicating your finances.",
+          "toolExplanation": "Accounting tools help you keep track of your financial accounts and records.",
           "Synonym": "bookkeeping",
           "Synonym__1": "balancing the books",
           "Synonym__2": "taxes",
@@ -344,10 +344,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Bulk email",
-          "Glossary definition": "n/a - no glossary entry needed",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Bulk email tools help you send out emails to a large amount of people quickly and efficiently.",
+          "category": "Tool",
+          "term": "Bulk email",
+          "glossaryDefinition": null,
+          "toolExplanation": "Bulk email tools help you send out emails to a large amount of people quickly and efficiently.",
           "Synonym": "Emailing",
           "Synonym__1": "Mass email",
           "Synonym__2": "Email blast",
@@ -361,10 +361,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Coding",
-          "Glossary definition": "Coding is used to create websites, apps, and other technologies that we interact with.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Coding tools give you a way to write the code that builds your technology.",
+          "category": "Tool",
+          "term": "Coding",
+          "glossaryDefinition": "Coding is used to create websites, apps, and other technologies that we interact with.",
+          "toolExplanation": "Coding tools give you a way to write the code that builds your technology.",
           "Synonym": "Programming",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -378,10 +378,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Collaboration",
-          "Glossary definition": "n/a - no glossary entry needed",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Collaboration tools help you and your team members work together on a specific thing more effectively.",
+          "category": "Tool",
+          "term": "Collaboration",
+          "glossaryDefinition": null,
+          "toolExplanation": "Collaboration tools help you and your team members work together on a specific thing more effectively.",
           "Synonym": "Working together",
           "Synonym__1": "Remote working",
           "Synonym__2": "Remote collaboration",
@@ -395,10 +395,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Communication",
-          "Glossary definition": "Communication is the process of sharing or exchanging information with other people",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Communication tools give you a way to talk and write to others.",
+          "category": "Tool",
+          "term": "Communication",
+          "glossaryDefinition": "Communication is the process of sharing or exchanging information with other people",
+          "toolExplanation": "Communication tools give you a way to talk and write to others.",
           "Synonym": "Talking",
           "Synonym__1": "Connect",
           "Synonym__2": "",
@@ -412,10 +412,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Crowdfunding",
-          "Glossary definition": "Crowdfunding is raising funds for a project or organization, typically through small donations from a large amount of people. This often happens through the internet.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Crowdfunding tools help you raise money for your co-op or project online.",
+          "category": "Tool",
+          "term": "Crowdfunding",
+          "glossaryDefinition": "Crowdfunding is raising funds for a project or organization, typically through small donations from a large amount of people. This often happens through the internet.",
+          "toolExplanation": "Crowdfunding tools help you raise money for your co-op or project online.",
           "Synonym": "Fundraising",
           "Synonym__1": "Campaign",
           "Synonym__2": "",
@@ -429,10 +429,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Customer relationship management",
-          "Glossary definition": "Customer relationship management is a type of software used to manage your organization's relationships with current and prospective customers. This usually looks like keeping track of your customer's contact information, seeing their previous transactions with you, and integrating with other related apps such as billing and payments.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Customer relationship management tools give you a way to keep track of your customers, store their contact information, and see how they've interacted with you in the past. Certain CRM tools also allow you integrate other tools, like billing and payments.",
+          "category": "Tool",
+          "term": "Customer relationship management",
+          "glossaryDefinition": "Customer relationship management is a type of software used to manage your organization's relationships with current and prospective customers. This usually looks like keeping track of your customer's contact information, seeing their previous transactions with you, and integrating with other related apps such as billing and payments.",
+          "toolExplanation": "Customer relationship management tools give you a way to keep track of your customers, store their contact information, and see how they've interacted with you in the past. Certain CRM tools also allow you integrate other tools, like billing and payments.",
           "Synonym": "CRM",
           "Synonym__1": "Customer relation",
           "Synonym__2": "Customer retention",
@@ -446,10 +446,10 @@ export async function get(req, res, next) {
           "__1": "Member outreach"
         },
         {
-          "Category": "Tool",
-          "Term": "Decision making",
-          "Glossary definition": "Decision making is the process and action of making decisions.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Decision making tools can help your co-op make decisions together through an online software.",
+          "category": "Tool",
+          "term": "Decision making",
+          "glossaryDefinition": "Decision making is the process and action of making decisions.",
+          "toolExplanation": "Decision making tools can help your co-op make decisions together through an online software.",
           "Synonym": "Governance",
           "Synonym__1": "Voting",
           "Synonym__2": "Sociocracy",
@@ -463,10 +463,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Design",
-          "Glossary definition": "Design is the process that is used to plan and define the functionality, appearance, and qualities of a certain thing. Designs are usually expressed visually, through drawings or diagrams.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Design tools give you a way of visualizing your designs.",
+          "category": "Tool",
+          "term": "Design",
+          "glossaryDefinition": "Design is the process that is used to plan and define the functionality, appearance, and qualities of a certain thing. Designs are usually expressed visually, through drawings or diagrams.",
+          "toolExplanation": "Design tools give you a way of visualizing your designs.",
           "Synonym": "UX",
           "Synonym__1": "UI",
           "Synonym__2": "User experience",
@@ -480,10 +480,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Document editing",
-          "Glossary definition": "n/a - no glossary entry needed",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Document editing tools allow you to write and edit. Some tools allow you to edit collaboratively with others in real time.",
+          "category": "Tool",
+          "term": "Document editing",
+          "glossaryDefinition": null,
+          "toolExplanation": "Document editing tools allow you to write and edit. Some tools allow you to edit collaboratively with others in real time.",
           "Synonym": "Word procesing",
           "Synonym__1": "Text editor",
           "Synonym__2": "Note taking",
@@ -497,10 +497,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Document sharing and storage",
-          "Glossary definition": "n/a - no glossary entry needed",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Document storage tools allow you to store your documents and files in a cloud storage solution.",
+          "category": "Tool",
+          "term": "Document sharing and storage",
+          "glossaryDefinition": null,
+          "toolExplanation": "Document storage tools allow you to store your documents and files in a cloud storage solution.",
           "Synonym": "Cloud storage",
           "Synonym__1": "File hosting",
           "Synonym__2": "Storage",
@@ -514,10 +514,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Expense tracking",
-          "Glossary definition": "n/a - no glossary entry needed",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Expense tracking tools give you a way to track all of your expenses. Some tools will allow you to add your budget, record income, and more.",
+          "category": "Tool",
+          "term": "Expense tracking",
+          "glossaryDefinition": null,
+          "toolExplanation": "Expense tracking tools give you a way to track all of your expenses. Some tools will allow you to add your budget, record income, and more.",
           "Synonym": "Spendings",
           "Synonym__1": "Tracking spendings",
           "Synonym__2": "Expense tally",
@@ -531,10 +531,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Finances",
-          "Glossary definition": "Finances is anything to do with the exchange or management of money",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Finance tools will help you manage your co-op's money.",
+          "category": "Tool",
+          "term": "Finances",
+          "glossaryDefinition": "Finances is anything to do with the exchange or management of money",
+          "toolExplanation": "Finance tools will help you manage your co-op's money.",
           "Synonym": "",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -548,10 +548,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Group chat",
-          "Glossary definition": "n/a - no glossary entry needed",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Group chat tools help you form a group and chat with them.",
+          "category": "Tool",
+          "term": "Group chat",
+          "glossaryDefinition": null,
+          "toolExplanation": "Group chat tools help you form a group and chat with them.",
           "Synonym": "Chatting",
           "Synonym__1": "Chat",
           "Synonym__2": "Messaging",
@@ -565,10 +565,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Individual email",
-          "Glossary definition": "n/a - no glossary entry needed",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Individual email tools help you set up an email account that you can send and receive emails at.",
+          "category": "Tool",
+          "term": "Individual email",
+          "glossaryDefinition": null,
+          "toolExplanation": "Individual email tools help you set up an email account that you can send and receive emails at.",
           "Synonym": "Emailing",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -582,10 +582,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Marketing",
-          "Glossary definition": "Marketing is the process of determining how to interest potential customers and clients for your product or service, and then selling or distributing to them.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Marketing tools help you sell or distribute your products or services to your customers.",
+          "category": "Tool",
+          "term": "Marketing",
+          "glossaryDefinition": "Marketing is the process of determining how to interest potential customers and clients for your product or service, and then selling or distributing to them.",
+          "toolExplanation": "Marketing tools help you sell or distribute your products or services to your customers.",
           "Synonym": "Selling",
           "Synonym__1": "Sales",
           "Synonym__2": "Retail",
@@ -599,10 +599,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Payment from customers",
-          "Glossary definition": "n/a - no glossary entry needed",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "These tools help you receive payment from your customers.",
+          "category": "Tool",
+          "term": "Payment from customers",
+          "glossaryDefinition": null,
+          "toolExplanation": "These tools help you receive payment from your customers.",
           "Synonym": "Ecommerce",
           "Synonym__1": "POS",
           "Synonym__2": "Point of sale",
@@ -616,10 +616,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Payment to vendors & suppliers",
-          "Glossary definition": "n/a - no glossary entry needed",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "These tools help you pay your vendors and suppliers.",
+          "category": "Tool",
+          "term": "Payment to vendors & suppliers",
+          "glossaryDefinition": null,
+          "toolExplanation": "These tools help you pay your vendors and suppliers.",
           "Synonym": "Accounts payable",
           "Synonym__1": "Invoicing",
           "Synonym__2": "Billing",
@@ -633,10 +633,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Payroll",
-          "Glossary definition": "Payroll is a list of a company's employees and how much they are to be paid.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Payroll tools help you pay your employees on time and accurately.",
+          "category": "Tool",
+          "term": "Payroll",
+          "glossaryDefinition": "Payroll is a list of a company's employees and how much they are to be paid.",
+          "toolExplanation": "Payroll tools help you pay your employees on time and accurately.",
           "Synonym": "Paying employees",
           "Synonym__1": "HR",
           "Synonym__2": "Employee compensation",
@@ -650,10 +650,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Project management",
-          "Glossary definition": "Project management is the practice of planning the project, defining the boundaries of what goals and activities the project will (and won't) involve, and supporting the broader team to ensure project goals are met in a specific timeframe",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Project management tools that help co-ops manage project timelines, share documents, track tasks, discuss issues, and more.",
+          "category": "Tool",
+          "term": "Project management",
+          "glossaryDefinition": "Project management is the practice of planning the project, defining the boundaries of what goals and activities the project will (and won't) involve, and supporting the broader team to ensure project goals are met in a specific timeframe",
+          "toolExplanation": "Project management tools that help co-ops manage project timelines, share documents, track tasks, discuss issues, and more.",
           "Synonym": "Project planning",
           "Synonym__1": "Managing timelines",
           "Synonym__2": "Timeline",
@@ -667,10 +667,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Shared calendar",
-          "Glossary definition": "n/a - no glossary entry needed",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Calendar tools provide an online calendar software.",
+          "category": "Tool",
+          "term": "Shared calendar",
+          "glossaryDefinition": null,
+          "toolExplanation": "Calendar tools provide an online calendar software.",
           "Synonym": "Timetable",
           "Synonym__1": "Schedule",
           "Synonym__2": "",
@@ -684,10 +684,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Staffing",
-          "Glossary definition": "n/a - no glossary entry needed",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Staffing tools help you or your customers schedule an appointment or service.",
+          "category": "Tool",
+          "term": "Staffing",
+          "glossaryDefinition": null,
+          "toolExplanation": "Staffing tools help you or your customers schedule an appointment or service.",
           "Synonym": "Making appointments",
           "Synonym__1": "Appointments",
           "Synonym__2": "Booking",
@@ -701,10 +701,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Technology-building",
-          "Glossary definition": "",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Technology-building tools give you the means to design and build digital tools.",
+          "category": "Tool",
+          "term": "Technology-building",
+          "glossaryDefinition": "",
+          "toolExplanation": "Technology-building tools give you the means to design and build digital tools.",
           "Synonym": "Tech",
           "Synonym__1": "Website",
           "Synonym__2": "Website builder",
@@ -718,10 +718,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Time management",
-          "Glossary definition": "Time management is the process of managing your time in a way that is most effective to achieve your goals.",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Time management tools help you better manage you and your team's time.",
+          "category": "Tool",
+          "term": "Time management",
+          "glossaryDefinition": "Time management is the process of managing your time in a way that is most effective to achieve your goals.",
+          "toolExplanation": "Time management tools help you better manage you and your team's time.",
           "Synonym": "Schedule",
           "Synonym__1": "",
           "Synonym__2": "",
@@ -735,10 +735,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Time tracking",
-          "Glossary definition": "n/a - no glossary entry needed",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Time tracking tools help you keep a record of the time you're spending on a task.",
+          "category": "Tool",
+          "term": "Time tracking",
+          "glossaryDefinition": null,
+          "toolExplanation": "Time tracking tools help you keep a record of the time you're spending on a task.",
           "Synonym": "Timesheet",
           "Synonym__1": "Signing in and out",
           "Synonym__2": "Clocking in and out",
@@ -752,10 +752,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Video conference",
-          "Glossary definition": "n/a - no glossary entry needed",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Video conferencing tools help you talk to people through audio and video online.",
+          "category": "Tool",
+          "term": "Video conference",
+          "glossaryDefinition": null,
+          "toolExplanation": "Video conferencing tools help you talk to people through audio and video online.",
           "Synonym": "Video chat",
           "Synonym__1": "Video call",
           "Synonym__2": "Meetings",
@@ -769,10 +769,10 @@ export async function get(req, res, next) {
           "__1": ""
         },
         {
-          "Category": "Tool",
-          "Term": "Website builder",
-          "Glossary definition": "n/a - no glossary entry needed",
-          "Copy for tool explanation\nex. \"Accounting tools help you...": "Website builders are tools that let you build a website easily and without knowing how to code.",
+          "category": "Tool",
+          "term": "Website builder",
+          "glossaryDefinition": null,
+          "toolExplanation": "Website builders are tools that let you build a website easily and without knowing how to code.",
           "Synonym": "Website template",
           "Synonym__1": "Ecommerce",
           "Synonym__2": "",
