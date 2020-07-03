@@ -1,14 +1,5 @@
-module.exports = (a, b) => {
-	const glossaryEntryA = a.term.toUpperCase();
-	const glossaryEntryB = b.term.toUpperCase();
+const sorts = require('./sort-by-object-key.js')
 
-	let comparison = 0;
-
-	if (glossaryEntryA > glossaryEntryB) {
-		comparison = 1;
-	} else if (glossaryEntryA < glossaryEntryB) {
-		comparison = -1;
-	}
-
-	return comparison;
+module.exports = (a, b) => {	
+	return sorts.byObjectKey(a, b, "term");
 };
