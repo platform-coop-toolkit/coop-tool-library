@@ -35,6 +35,8 @@
 		displayedEntries = [].concat(glossaryEntries);
 	}
 
+	import GlossaryEntry from '../../components/GlossaryEntry.svelte';
+
 </script>
 
 <svelte:head>
@@ -51,15 +53,9 @@
 {#each categories as category}
 <h2>{category}</h2>
 {#each displayedEntries as entry}
-{#if entry.category === category}
-	<h3>{entry.term}</h3>
-	{#if entry.glossaryDefinition}
-		<p>{entry.glossaryDefinition}</p>
+	{#if entry.category === category}		
+		<GlossaryEntry entry={entry} />
 	{/if}
-	{#if entry.toolExplanation}
-		<p>{entry.toolExplanation}</p>
-	{/if}
-{/if}
 {/each}
 {/each}
 </div>
