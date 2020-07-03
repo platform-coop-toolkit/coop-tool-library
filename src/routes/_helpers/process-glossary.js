@@ -15,7 +15,7 @@ module.exports = glossaryEntry => {
         
     })
 
-    processedEntry.slug = slugify(processedEntry.term);
+    processedEntry.slug = slugify(processedEntry.term.toLowerCase());
     processedEntry.synonyms = synonyms;
 
     return processedEntry
