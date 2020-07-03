@@ -3,8 +3,10 @@
 
     import fancyConcat from '../_helpers/fancy-concat';
 
+    import { fade } from 'svelte/transition';
+
 </script>
-<article class="card" data-niche={tool.niches ? Object.keys(tool.niches).join(' ') : ''}>
+<article transition:fade|local class="card" data-niche={tool.niches ? Object.keys(tool.niches).join(' ') : ''}>
     <header>
         <h2><a class="card__link" href="/tools/{tool.slug}/">{ tool.name }</a></h2>
     </header>

@@ -22,3 +22,4 @@
             {/if}
         </div>
 </div>    
+<div class="spacer"></div>
