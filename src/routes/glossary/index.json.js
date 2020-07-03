@@ -17,8 +17,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Co-op type",
@@ -34,8 +34,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Co-op type",
@@ -51,8 +51,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Co-op type",
@@ -68,8 +68,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Co-op type",
@@ -85,8 +85,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Co-op type",
@@ -102,8 +102,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Co-op type",
@@ -119,8 +119,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Co-op type",
@@ -136,8 +136,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Co-op type",
@@ -153,8 +153,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Co-op type",
@@ -170,8 +170,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Co-op type",
@@ -187,8 +187,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Stages of development",
@@ -204,8 +204,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Stages of development",
@@ -221,8 +221,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Stages of development",
@@ -238,8 +238,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Stages of development",
@@ -255,8 +255,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Stages of development",
@@ -272,8 +272,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tech term",
@@ -289,8 +289,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tech term",
@@ -306,8 +306,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tech term",
@@ -323,8 +323,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -340,8 +340,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -357,8 +357,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -374,8 +374,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -391,8 +391,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -408,8 +408,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -425,8 +425,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -459,8 +459,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -476,8 +476,8 @@ export async function get(req, res, next) {
           "Synonym__6": "Graphic design",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -493,8 +493,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -510,8 +510,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -527,8 +527,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -544,8 +544,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -561,8 +561,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -578,8 +578,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -595,8 +595,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -612,8 +612,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -629,8 +629,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -646,8 +646,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -663,8 +663,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -680,8 +680,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -697,8 +697,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -714,8 +714,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -731,8 +731,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -748,8 +748,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -765,8 +765,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         },
         {
           "category": "Tool",
@@ -782,8 +782,8 @@ export async function get(req, res, next) {
           "Synonym__6": "",
           "Synonym__7": "",
           "Synonym__8": "",
-          "": "",
-          "__1": ""
+          
+          
         }
       ]
 
