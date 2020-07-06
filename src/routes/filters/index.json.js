@@ -1,5 +1,6 @@
 const fetch = require('node-fetch');
 
+import appConfig from '../../_helpers/app-config';
 import processNiches from '../_helpers/process-niches';
 import processLanguages from '../_helpers/process-languages';
 
@@ -23,7 +24,7 @@ export async function get(req, res, next) {
         languages: {values: [], type: "inclusive"}
     };
 
-	await fetch('https://demo.directory.platform.coop/api/tools/')
+	await fetch(appConfig.directoryUrls.toolsApi)
 		.then(result => result.json())
 		.then(json => {
             filters.niches.values = json.reduce(processNiches, []).sort();  

@@ -6,7 +6,7 @@ import sortByObjectKey from '../_helpers/sort-by-object-key';
 export async function get(req, res, next) {
 	let tools = [];
 
-	await fetch('https://demo.directory.platform.coop/api/tools/')
+	await fetch('https://directory.platform.coop/api/tools/')
 		.then(result => result.json())
 		.then(json => {
 			tools = json.map(processTools).sort(function(a, b) {
