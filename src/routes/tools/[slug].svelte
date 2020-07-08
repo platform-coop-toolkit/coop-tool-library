@@ -34,7 +34,7 @@
 	<hr />
 	<h2>Details</h2>	
 
-	<div class="resource__meta">
+	<div class="meta">
 		
 					{#if tool.pricing }
 						<div class="card__meta"><svg class="icon icon--pricing" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/pricing.svg#pricing" /></svg> Pricing: { tool.pricing }</div>
@@ -46,8 +46,16 @@
 
 					{#if tool.license }
 						<div class="card__meta"><svg class="icon icon--license" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/licensing.svg#licensing" /></svg> License: { tool.license }</div>
-					{/if}				
-		
+					{/if}			
+
+					{#if tool.sectors && tool.sectors.length > 0 }
+        				<div class="card__meta"><svg class="icon icon--sector" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/images/sector.svg#sector" /></svg> Sector: { fancyConcat(tool.sectors) }</div>
+        			{/if}			
 	</div>
+	
+	<div class="spacer"></div>
+	<a class="button" href="{tool.url}">		 		
+		<span class="button__label">Visit tool website</span>		
+	</a>
 </article>
 
