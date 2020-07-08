@@ -133,9 +133,9 @@
 <div class="filter-wrapper">
 	
 	<button on:click={handleShowFiltersClick} id="show-filters" type="button" class="button button--borderless"><svg class="icon icon--filter" aria-hidden={filtersExpanded} viewBox="0 0 20 20" focusable="false">
-        <use href="/images/filter.svg#filter" />
-    </svg>
-    <span class="button__label">Filter</span></button>
+		<use href="/images/filter.svg#filter" />
+	</svg>
+	<span class="button__label">Filter</span></button>
 
 	<div class="filters{filtersExpanded ? " filters--expanded" : ""}">
 		<button on:click={handleHideFiltersClick} id="hide-filters" type="button" class="button button--borderless button--inverse"><span class="button__label">Close</span><svg class="icon icon--close" aria-hidden={filtersExpanded} viewBox="0 0 20 20" focusable="false">

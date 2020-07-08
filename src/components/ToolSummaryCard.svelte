@@ -22,16 +22,16 @@
         <div class="card__meta">{ tool.usecount } { tool.usecount > 1 ? 'coops use' : 'coop uses' } it</div>
         {/if}
         {#if tool.pricing }
-        <div class="card__meta"><svg class="icon icon--pricing" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/report.svg#report" /></svg> Pricing: { tool.pricing }</div>
+        <div class="card__meta"><svg class="icon icon--pricing" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/pricing.svg#pricing" /></svg> Pricing: { tool.pricing }</div>
         {/if}
         {#if tool.license }
-        <div class="card__meta"><svg class="icon icon--settings" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/settings.svg#settings" /></svg> Licensing: { tool.license }</div>
+        <div class="card__meta"><svg class="icon icon--settings" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/licensing.svg#licensing" /></svg> Licensing: { tool.license }</div>
         {/if}
         {#if tool.sectors && tool.sectors.length > 0 }
         <div class="card__meta"><svg class="icon icon--sector" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/images/sector.svg#sector" /></svg> Sector: { fancyConcat(tool.sectors) }</div>
         {/if}
         {#if tool.languages && tool.languages.length > 0 }
-        <div class="card__meta"><svg class="icon icon--info" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/info.svg#info" /></svg> Language: { fancyConcat(tool.languages) }</div>
+        <div class="card__meta"><svg class="icon icon--info" viewBox="0 0 27 27" aria-hidden="true" focusable="false"><use href="/images/language.svg#language" /></svg> Language: { fancyConcat(tool.languages) }</div>
         {/if}
     </div>
 </article>

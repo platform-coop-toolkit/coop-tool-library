@@ -2,7 +2,7 @@
 	import GlobalNav from '../components/GlobalNav.svelte';
 	import Nav from '../components/Nav.svelte';
 
-	export let segment;
+	export let segment;	
 </script>
 
 <style lang="scss" global>
