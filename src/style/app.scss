@@ -1,5 +1,21 @@
 @import '../../node_modules/@platform-coop-toolkit/pinecone/src/assets/styles/pinecone.scss';
 
+.page-header ul {
+	list-style: none;
+}
+
+@include breakpoint-up(md) {
+	.page-header ul {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.page-header li + li {
+		margin-top: 0;
+		margin-left: var(--gutter);
+	}
+}
+
 .search-form-container {
     @include full-width-background(var(--blue-500));
     grid-column: 1 / -1;

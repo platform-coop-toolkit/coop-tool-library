@@ -23,7 +23,7 @@
 	<title>{tool.name}</title>
 </svelte:head>
 
-<article class="tool-detail-container">	
+<article class="tool-detail-container">
 	<div class="spacer"></div>
 	<h1>{tool.name}</h1>
 	<p>{tool.description}</p>
@@ -32,30 +32,28 @@
     {/if}
 	<div class="spacer"></div>
 	<hr />
-	<h2>Details</h2>	
+	<h2>Details</h2>
 
 	<div class="meta">
-		
+
 					{#if tool.pricing }
 						<div class="card__meta"><svg class="icon icon--pricing" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/pricing.svg#pricing" /></svg> Pricing: { tool.pricing }</div>
 					{/if}
 
 					{#if tool.languages }
-						<div class="card__meta"><svg class="icon icon--language" viewBox="0 0 27 27" aria-hidden="true" focusable="false"><use href="/images/language.svg#language" /></svg> Language: { tool.languages }</div>
-					{/if}				
+						<div class="card__meta"><svg class="icon icon--language-small" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/language-small.svg#language-small" /></svg> Language: { tool.languages }</div>
+					{/if}
 
 					{#if tool.license }
 						<div class="card__meta"><svg class="icon icon--license" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/licensing.svg#licensing" /></svg> License: { tool.license }</div>
-					{/if}			
+					{/if}
 
 					{#if tool.sectors && tool.sectors.length > 0 }
-        				<div class="card__meta"><svg class="icon icon--sector" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/images/sector.svg#sector" /></svg> Sector: { fancyConcat(tool.sectors) }</div>
-        			{/if}			
+        				<div class="card__meta"><svg class="icon icon--sector-small" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/sector-small.svg#sector-small" /></svg> Sector: { fancyConcat(tool.sectors) }</div>
+        			{/if}
 	</div>
-	
+
 	<div class="spacer"></div>
-	<a class="button" href="{tool.url}">		 		
-		<span class="button__label">Visit tool website</span>		
-	</a>
+	<a rel="external" class="cta" href="{tool.url}">Visit tool website</a>
 </article>
 

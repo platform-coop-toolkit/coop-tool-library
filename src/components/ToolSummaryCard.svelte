@@ -3,8 +3,7 @@
 
     import fancyConcat from '../_helpers/fancy-concat';
 
-    import { fade } from 'svelte/transition';
-
+	import { fade } from 'svelte/transition';
 </script>
 <li class="card__wrapper">
 <article transition:fade|local class="card" data-niche={tool.niches ? Object.keys(tool.niches).join(' ') : ''}>
@@ -29,11 +28,17 @@
         <div class="card__meta"><svg class="icon icon--settings" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/licensing.svg#licensing" /></svg> Licensing: { tool.license }</div>
         {/if}
         {#if tool.sectors && tool.sectors.length > 0 }
-        <div class="card__meta"><svg class="icon icon--sector" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/images/sector.svg#sector" /></svg> Sector: { fancyConcat(tool.sectors) }</div>
+        <div class="card__meta"><svg class="icon icon--sector-small" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/sector-small.svg#sector-small" /></svg> Sector: { fancyConcat(tool.sectors) }</div>
         {/if}
         {#if tool.languages && tool.languages.length > 0 }
-        <div class="card__meta"><svg class="icon icon--info" viewBox="0 0 27 27" aria-hidden="true" focusable="false"><use href="/images/language.svg#language" /></svg> Language: { fancyConcat(tool.languages) }</div>
+        <div class="card__meta"><svg class="icon icon--language-small" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/language-small.svg#language-small" /></svg> Language: { fancyConcat(tool.languages) }</div>
         {/if}
     </div>
 </article>
 </li>
+
+<style>
+.card {
+	cursor: pointer;
+}
+</style>

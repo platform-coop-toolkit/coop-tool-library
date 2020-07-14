@@ -112,7 +112,7 @@
 	<form role="search" method="get" class="search-form search-form--inverse" action="/">
 		<label>
 			<span class="screen-reader-text">search</span>
-			<input id="s" name="s" type="search" bind:value={searchTerm} />
+			<input id="s" name="s" type="search" placeholder="Search for a tool…" bind:value={searchTerm} />
 		</label>
 		<button type="submit" class="button button--search"><span class="screen-reader-text">submit search</span><svg class="icon icon--search" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
 				<use href="/images/search.svg#search" />
@@ -170,17 +170,6 @@
 .page-header .inside {
 	background-color: var(--blue-500);
 	box-shadow: none;
-}
-
-.page-header ul {
-	list-style: none;
-	display: flex;
-	flex-direction: row;
-}
-
-.page-header li + li {
-	margin-top: 0;
-	margin-left: var(--gutter);
 }
 
 .search-form-container {
