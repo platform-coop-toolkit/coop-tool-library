@@ -15,7 +15,7 @@
 			availableFilters[filterName].param = filterName;
 			availableFilters[filterName].type = filters[filterName].type;
 		})
-		
+
 
 		return {
 			tools,
@@ -26,17 +26,17 @@
 
 <script>
 	export let tools;
-	
+
 	import { stores } from '@sapper/app';
 	const { page } = stores();
 
-	export let availableFilters = {};	
-	
+	export let availableFilters = {};
+
 	export let currentFilters = {};
 
 	export let searchTerm = $page.query["s"] ? $page.query["s"] : "";
-	
-	$: updateFilterUrl(currentFilters);		
+
+	$: updateFilterUrl(currentFilters);
 
 	Object.keys(availableFilters).forEach(function (filterName) {
 		const filterDef = availableFilters[filterName];
@@ -44,41 +44,41 @@
 			param: filterDef.param,
 			value: $page.query[filterDef.param] ? $page.query[filterDef.param] : "All",
 			multiValue: null
-		}		
+		}
 		currentFilters[filterName] = filter;
 	})
-	
+
 	$: updateSearchUrl(searchTerm);
 
 	function updateSearchUrl(searchTerm) {
 		updateUrlParam("s", searchTerm);
 	}
 
-	function updateFilterUrl(currentFilters) {		
+	function updateFilterUrl(currentFilters) {
 		Object.keys(currentFilters).forEach(function (filterName) {
 			const currentFilter = currentFilters[filterName];
 			updateUrlParam(currentFilter.param, currentFilter.value);
 		})
 	}
 
-	function updateUrlParam(paramName, paramValue) {		
+	function updateUrlParam(paramName, paramValue) {
 		if(typeof window !== 'undefined') {
-		const params = new URLSearchParams(window.location.search);		
+		const params = new URLSearchParams(window.location.search);
 		params.set(paramName, paramValue);
 			window.history.pushState({}, "", decodeURIComponent(`${window.location.pathname}?${params}`));
 		}
 	}
 
-	export let filtersExpanded = false;	
+	export let filtersExpanded = false;
 
 	function handleShowFiltersClick() {
 		filtersExpanded = true;
 	}
-	
+
 	function handleHideFiltersClick() {
 		filtersExpanded = false;
 	}
-	
+
 	import CheckboxGroup from '../components/CheckboxGroup.svelte';
 	import RadioGroup from '../components/RadioGroup.svelte';
 	import ToolList from '../components/ToolList.svelte';
@@ -100,19 +100,15 @@
 					for your co-op
 				</li>
 				<li>
-					<a href="/get-recommendations/">See other co-op’s tools</a><br>
-					See other co-op’s tools
-				</li>
-				<li>
-					<a href="/share-tools/">Share your tools</a><br>
+					<a href="https://directory.platform.coop/add/tool">Share your tools</a><br>
 					to help other co-ops find tools
 				</li>
-			</ul>							
+			</ul>
 		</div>
-	</div>		
+	</div>
 </div>
 
-<div class="has-blue-500-background-color search-form-container">	
+<div class="has-blue-500-background-color search-form-container">
 	<form role="search" method="get" class="search-form search-form--inverse" action="/">
 		<label>
 			<span class="screen-reader-text">search</span>
@@ -127,11 +123,12 @@
 		<h2>View by category</h2>
 		<RadioGroup options={availableFilters.niches.values} bind:activeOption={currentFilters.niches.value} />
 	</form>
+	<div class="spacer"></div>
 </div>
 
 
 <div class="filter-wrapper">
-	
+
 	<button on:click={handleShowFiltersClick} id="show-filters" type="button" class="button button--borderless"><svg class="icon icon--filter" aria-hidden={filtersExpanded} viewBox="0 0 20 20" focusable="false">
 		<use href="/images/filter.svg#filter" />
 	</svg>
@@ -144,15 +141,21 @@
 		</button>
 		<form class="form" action="/">
 			<h2 class="h1">Filters</h2>
-			{#each Object.keys(availableFilters) as availableFilterKey}	
-				{#if availableFilters[availableFilterKey].type === "inclusive"}					
-					<CheckboxGroup filterTitle={availableFilterKey} options={availableFilters[availableFilterKey].values} checkedOptions={currentFilters[availableFilterKey].value.split("|")} bind:activeFiltersAsString={currentFilters[availableFilterKey].value} />		
-				{/if}			
-			{/each}			
+			{#each Object.keys(availableFilters) as availableFilterKey}
+				{#if availableFilters[availableFilterKey].type === "inclusive"}
+					<CheckboxGroup filterTitle={availableFilterKey.replace(/^\w/, (c) => c.toUpperCase())} options={availableFilters[availableFilterKey].values} checkedOptions={currentFilters[availableFilterKey].value.split("|")} bind:activeFiltersAsString={currentFilters[availableFilterKey].value} />
+				{/if}
+			{/each}
 		</form>
-	</div>	
+	</div>
 </div>
 
-<div class="resource-list">	
-	<ToolList tools={tools} currentFilters={currentFilters} searchTerm={searchTerm} />		
+<div class="resource-list">
+	<ToolList tools={tools} currentFilters={currentFilters} searchTerm={searchTerm} />
 </div>
+
+<style>
+.filter-wrapper {
+	margin-top: 0;
+}
+</style>
