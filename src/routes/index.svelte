@@ -100,7 +100,7 @@
 					for your co-op
 				</li>
 				<li>
-					<a href="https://directory.platform.coop/add/tool">Share your tools</a><br>
+					<a rel="external" href="https://directory.platform.coop/add/tool">Share your tools</a><br>
 					to help other co-ops find tools
 				</li>
 			</ul>
@@ -156,6 +156,6 @@
 
 <style>
 .filter-wrapper {
-	margin-top: 0;
+	padding-top: 0.5rem;
 }
 </style>
