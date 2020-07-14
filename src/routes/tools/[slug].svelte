@@ -16,7 +16,7 @@
 <script>
     export let tool;
 	import fancyConcat from '../../_helpers/fancy-concat';
-
+	import Icon from '../../components/Icon.svelte';
 </script>
 
 <svelte:head>
@@ -37,19 +37,19 @@
 	<div class="meta">
 
 					{#if tool.pricing }
-						<div class="card__meta"><svg class="icon icon--pricing" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/pricing.svg#pricing" /></svg> Pricing: { tool.pricing }</div>
+						<div class="card__meta"><Icon icon={'pricing'} /> Pricing: { tool.pricing }</div>
 					{/if}
 
 					{#if tool.languages }
-						<div class="card__meta"><svg class="icon icon--language-small" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/language-small.svg#language-small" /></svg> Language: { tool.languages }</div>
+						<div class="card__meta"><Icon icon={'language-small'} /> Language: { tool.languages }</div>
 					{/if}
 
 					{#if tool.license }
-						<div class="card__meta"><svg class="icon icon--license" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/licensing.svg#licensing" /></svg> License: { tool.license }</div>
+						<div class="card__meta"><Icon icon={'licensing'} /> License: { tool.license }</div>
 					{/if}
 
 					{#if tool.sectors && tool.sectors.length > 0 }
-        				<div class="card__meta"><svg class="icon icon--sector-small" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/sector-small.svg#sector-small" /></svg> Sector: { fancyConcat(tool.sectors) }</div>
+        				<div class="card__meta"><Icon icon={'sector-small'} /> Sector: { fancyConcat(tool.sectors) }</div>
         			{/if}
 	</div>
 

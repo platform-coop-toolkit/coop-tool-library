@@ -1,7 +1,7 @@
 <script>
     export let tools = [];
     export let currentFilters = {};
-    export let filteredTools = [];    
+    export let filteredTools = [];
     export let searchTerm = "";
 
     import ToolSummaryCard from './ToolSummaryCard.svelte';
@@ -9,7 +9,7 @@
     const specialChecks = {
         niches: function(tool, propToCheck, filterValue) {
             if(filterValue === 'All') return true;
-            else return Object.keys(tool.niches).includes(filterValue);    
+            else return Object.keys(tool.niches).includes(filterValue);
         },
         languages: function(tool, propToCheck, filterValue) {
             if(filterValue === 'All') return true;
@@ -23,29 +23,29 @@
                 });
                 return matches;
             } else return false;
-        }         
+        }
     }
 
-    $: updateFilteredTools(currentFilters, searchTerm);		
+    $: updateFilteredTools(currentFilters, searchTerm);
 
-    function updateFilteredTools() {    
+    function updateFilteredTools() {
         filteredTools = tools.filter(function(tool) {
             return (meetsFilters(currentFilters, tool) && meetsSearchTerm(searchTerm, tool));
         });
     }
 
     function meetsFilters(filters, tool) {
-        
+
         let meets = true;
-        
-        Object.keys(filters).forEach(function (filterKey) {                
+
+        Object.keys(filters).forEach(function (filterKey) {
             let check = meetsFilterCriteria(tool, filterKey, filters[filterKey].value)
             if(check === false) {
-                meets = false;                
+                meets = false;
             }
-        });                
+        });
 
-        return meets;          
+        return meets;
     }
 
     function meetsSearchTerm(searchTerm, tool) {
@@ -66,7 +66,7 @@
         return meets;
     }
 
-    function meetsFilterCriteria(tool, propToCheck, filterValue) {                
+    function meetsFilterCriteria(tool, propToCheck, filterValue) {
         if(specialChecks[propToCheck]) {
             return specialChecks[propToCheck](tool, propToCheck, filterValue);
         }
@@ -77,13 +77,17 @@
             return desiredValues.includes(tool[propToCheck]);
         }
     }
-        
+
 </script>
 
-<div class="cards" >			
-    {#each filteredTools as tool}                                  			            		                        
+<div class="spacer"></div>
+<div role="alert">
+	<p class="h3">{ filteredTools.length } {#if filteredTools.length > 1}tools{:else}tool{/if} matched</p>
+</div>
+<div class="cards" >
+    {#each filteredTools as tool}
         <ToolSummaryCard tool={tool} />
-    {:else}				        
+    {:else}
         Sorry, no matching results.
-    {/each} 
+    {/each}
 </div>

@@ -27,6 +27,8 @@
 <script>
 	export let tools;
 
+	import Icon from '../components/Icon.svelte';
+
 	import { stores } from '@sapper/app';
 	const { page } = stores();
 
@@ -89,19 +91,26 @@
 	<title>Co-op Tool Library</title>
 </svelte:head>
 
-<div class="page-header has-blue-500-background-color">
+<div class="page-header">
 	<div class="inside">
 		<h1>Cooperative Tool Library</h1>
-		<p class="subhead">Practical tools for co-ops.</p>
+		<p class="subhead">A place for co-ops to find and share digital tools with each other.</p>
+		<div class="spacer"></div>
 		<div class="calls-to-action">
 			<ul>
 				<li>
-					<a class="h4 link--inverse" href="#tools">Find practical tools</a><br>
-					for your co-op
+					<a class="link" href="#tools">
+						<Icon icon={'browse'} iconClass={'icon--lg'} viewBox={'0 0 40 40'} /><br />
+						<span class="h4">Find practical tools</span><br />
+						for your co-op
+					</a>
 				</li>
 				<li>
-					<a class="h4 link--inverse" rel="external" href="https://directory.platform.coop/add/tool">Share your tools</a><br>
-					to help other co-ops find tools
+					<a class="link" rel="external" href="https://directory.platform.coop/add/tool">
+						<Icon icon={'share-tools'} iconClass={'icon--lg'} viewBox={'0 0 40 40'} /><br />
+						<span class="h4">Share your tools</span><br />
+						to help other co-ops find tools
+					</a>
 				</li>
 			</ul>
 		</div>
@@ -112,11 +121,9 @@
 	<form role="search" method="get" class="search-form search-form--inverse" action="/">
 		<label>
 			<span class="screen-reader-text">search</span>
-			<input id="s" name="s" type="search" placeholder="Search for a tool…" bind:value={searchTerm} />
+			<input id="s" name="s" type="search" placeholder="Search tools…" bind:value={searchTerm} />
 		</label>
-		<button type="submit" class="button button--search"><span class="screen-reader-text">submit search</span><svg class="icon icon--search" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
-				<use href="/images/search.svg#search" />
-			</svg>
+		<button type="submit" class="button button--search"><span class="screen-reader-text">submit search</span><Icon icon={'search'} />
 		</button>
 	</form>
 	<form id="tools" class="form" action="/">
@@ -129,15 +136,11 @@
 
 <div class="filter-wrapper">
 
-	<button on:click={handleShowFiltersClick} id="show-filters" type="button" class="button button--borderless"><svg class="icon icon--filter" aria-hidden={filtersExpanded} viewBox="0 0 20 20" focusable="false">
-		<use href="/images/filter.svg#filter" />
-	</svg>
+	<button on:click={handleShowFiltersClick} id="show-filters" type="button" class="button button--borderless"><Icon icon={'filter'} />
 	<span class="button__label">Filter</span></button>
 
 	<div class="filters{filtersExpanded ? " filters--expanded" : ""}">
-		<button on:click={handleHideFiltersClick} id="hide-filters" type="button" class="button button--borderless button--inverse"><span class="button__label">Close</span><svg class="icon icon--close" aria-hidden={filtersExpanded} viewBox="0 0 20 20" focusable="false">
-				<use href="/images/close.svg#close" />
-			</svg>
+		<button on:click={handleHideFiltersClick} id="hide-filters" type="button" class="button button--borderless button--inverse"><span class="button__label">Close</span><Icon icon={'close'} />
 		</button>
 		<form class="form" action="/">
 			<h2 class="h1">Filters</h2>
@@ -153,26 +156,3 @@
 <div class="resource-list">
 	<ToolList tools={tools} currentFilters={currentFilters} searchTerm={searchTerm} />
 </div>
-
-<style>
-
-.page-header {
-	margin-bottom: 0;
-	position: relative;
-	z-index: 1;
-}
-
-.page-header::before {
-	background-color: var(--blue-500) !important;
-	background-image: none;
-}
-
-.page-header .inside {
-	background-color: var(--blue-500);
-	box-shadow: none;
-}
-
-.filter-wrapper {
-	padding-top: 0.5rem;
-}
-</style>

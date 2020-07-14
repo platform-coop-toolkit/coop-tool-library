@@ -41,8 +41,6 @@
 			<svg class="icon icon--chevron-down" viewBox="0 0 20 20" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path id="chevron-down" d="m10 15a1 1 0 0 1 -.71-.29l-5-5a1 1 0 0 1 1.42-1.42l4.29 4.3 4.29-4.3a1 1 0 0 1 1.42 1.42l-5 5a1 1 0 0 1 -.71.29z" fill="currentColor"></path></svg>
 		</button>
         <div class="accordion__content">
-
-
             <button id={"deselect-" + idPrefix} type="button" class="button button--borderless" on:click={handleDeSelectAllClick}><span class="button__label">Deselect All<span class="screen-reader-text"> {filterTitle}</span></span></button>
             {#each options as option}
                 <ul class="input-group input-group__parent">

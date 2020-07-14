@@ -55,3 +55,53 @@
 .card__tool-type {
 	font-weight: $font-weight-bold;
 }
+
+.archive.archive--tools {
+	--parent-background-color: var(--white);
+
+	background-color: var(--white);
+}
+
+.archive.archive--tools .page-header {
+	position: relative;
+	z-index: 0;
+}
+
+.archive.archive--tools .page-header::before {
+	background-image: url('/images/tool-library.svg');
+}
+
+.archive.archive--tools .page-header .inside {
+	background: transparent;
+	box-shadow: none;
+}
+
+.archive.archive--tools .page-header .link {
+	background-color: transparent;
+}
+
+
+[role="banner"] .inner {
+	justify-content: flex-end;
+}
+
+[role="banner"] .menu {
+	z-index: 2;
+}
+
+.calls-to-action .link {
+	position: relative;
+}
+
+.calls-to-action .link:before {
+	content: "";
+	display: block;
+	background: var(--yellow-500);
+	border-radius: 50%;
+	width: rem(32);
+	height: rem(32);
+	position: absolute;
+	top: rem(-6);
+	left: rem(-6);
+	z-index: -1;
+}
