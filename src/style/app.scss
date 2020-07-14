@@ -16,18 +16,17 @@
 	}
 }
 
-.search-form-container {
+.home__search {
     @include full-width-background(var(--blue-500));
     grid-column: 1 / -1;
     position: relative;
     // On top of the full width background
-    z-index: 0;
+    z-index: 1;
 
     .search-form {
         bottom: 1.5em;
         position: relative;
-    }
-}
+	}}
 
 .grid-container--full-width {
     grid-column: 1 / -1;
@@ -45,4 +44,14 @@
 // ends up on top of view-by-category otherwise
 .filter-wrapper {
     grid-row: unset;
+}
+
+.card--tool {
+	@include card($yellow-500, $dark-mint-500, false);
+
+	cursor: pointer;
+}
+
+.card__tool-type {
+	font-weight: $font-weight-bold;
 }

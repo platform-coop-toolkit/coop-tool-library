@@ -108,7 +108,7 @@
 	</div>
 </div>
 
-<div class="has-blue-500-background-color search-form-container">
+<div class="has-blue-500-background-color home__search">
 	<form role="search" method="get" class="search-form search-form--inverse" action="/">
 		<label>
 			<span class="screen-reader-text">search</span>
@@ -170,10 +170,6 @@
 .page-header .inside {
 	background-color: var(--blue-500);
 	box-shadow: none;
-}
-
-.search-form-container {
-	z-index: 1;
 }
 
 .filter-wrapper {
