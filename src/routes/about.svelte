@@ -20,8 +20,8 @@
 	<p>This website is help run by everyone in the co-op community who can contribute by adding tools, editing their information to ensure accuracy, and those who write reviews. A small amount of moderation is done by the Platform Cooperative Consortium when tools are added. </p>
 
 	<h2>Who created the Tool Library?</h2>
-	<p>The Cooperative Tool Library is created as a collaboration between the Inclusive Design Research Centre, our many co-designers from the cooperative community, and the Platform Cooperative Consortium.</p>
+	<p>The Cooperative Tool Library is created as a collaboration between the <a rel="external" href="https://idrc.ocadu.ca">Inclusive Design Research Centre</a>, our many co-designers from the cooperative community, and the <a rel="external" href="https://platform.coop">Platform Cooperative Consortium</a>.</p>
 
 	<h2>Contact us</h2>
-	<p>If you have any feedback this website, or have any questions about how to use it, please contact the Platform Cooperative Consortium at info@platform.coop.</p>
+	<p>If you have any feedback this website, or have any questions about how to use it, please contact the Platform Cooperative Consortium at <a rel="external" href="mailto:pcc@newschool.edu">pcc@newschool.edu</a>.</p>
 </div>

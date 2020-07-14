@@ -89,18 +89,18 @@
 	<title>Co-op Tool Library</title>
 </svelte:head>
 
-<div class="page-header">
+<div class="page-header has-blue-500-background-color">
 	<div class="inside">
 		<h1>Cooperative Tool Library</h1>
 		<p class="subhead">Practical tools for co-ops.</p>
 		<div class="calls-to-action">
 			<ul>
 				<li>
-					<a href="#tools">Find practical tools</a><br>
+					<a class="h4 link--inverse" href="#tools">Find practical tools</a><br>
 					for your co-op
 				</li>
 				<li>
-					<a rel="external" href="https://directory.platform.coop/add/tool">Share your tools</a><br>
+					<a class="h4 link--inverse" rel="external" href="https://directory.platform.coop/add/tool">Share your tools</a><br>
 					to help other co-ops find tools
 				</li>
 			</ul>
@@ -119,7 +119,7 @@
 			</svg>
 		</button>
 	</form>
-	<form class="form" action="/">
+	<form id="tools" class="form" action="/">
 		<h2>View by category</h2>
 		<RadioGroup options={availableFilters.niches.values} bind:activeOption={currentFilters.niches.value} />
 	</form>
@@ -155,6 +155,38 @@
 </div>
 
 <style>
+
+.page-header {
+	margin-bottom: 0;
+	position: relative;
+	z-index: 1;
+}
+
+.page-header::before {
+	background-color: var(--blue-500) !important;
+	background-image: none;
+}
+
+.page-header .inside {
+	background-color: var(--blue-500);
+	box-shadow: none;
+}
+
+.page-header ul {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+}
+
+.page-header li + li {
+	margin-top: 0;
+	margin-left: var(--gutter);
+}
+
+.search-form-container {
+	z-index: 1;
+}
+
 .filter-wrapper {
 	padding-top: 0.5rem;
 }
