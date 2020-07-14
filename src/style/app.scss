@@ -1,1 +1,48 @@
 @import '../../node_modules/@platform-coop-toolkit/pinecone/src/assets/styles/pinecone.scss';
+
+.page-header ul {
+	list-style: none;
+}
+
+@include breakpoint-up(md) {
+	.page-header ul {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.page-header li + li {
+		margin-top: 0;
+		margin-left: var(--gutter);
+	}
+}
+
+.search-form-container {
+    @include full-width-background(var(--blue-500));
+    grid-column: 1 / -1;
+    position: relative;
+    // On top of the full width background
+    z-index: 0;
+
+    .search-form {
+        bottom: 1.5em;
+        position: relative;
+    }
+}
+
+.grid-container--full-width {
+    grid-column: 1 / -1;
+}
+
+.tool-detail-container {
+    @include full-width-background(white);
+    grid-column: 1 / -1;
+    position: relative;
+    // On top of the full width background
+    z-index: 0;
+}
+
+// This seems like it shouldn't be necessary, but filter-wrapper
+// ends up on top of view-by-category otherwise
+.filter-wrapper {
+    grid-row: unset;
+}

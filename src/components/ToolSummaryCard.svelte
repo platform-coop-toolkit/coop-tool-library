@@ -1,0 +1,44 @@
+<script>
+    export let tool;
+
+    import fancyConcat from '../_helpers/fancy-concat';
+
+	import { fade } from 'svelte/transition';
+</script>
+<li class="card__wrapper">
+<article transition:fade|local class="card" data-niche={tool.niches ? Object.keys(tool.niches).join(' ') : ''}>
+    <header>
+        <h2><a class="card__link" href="/tools/{tool.slug}/">{ tool.name }</a></h2>
+    </header>
+    <div class="meta">
+        {#if tool.niches }
+        <div class="card__meta"><span class="screen-reader-text">tool type: </span>
+        {#each Object.keys(tool.niches) as niche}
+            { niche }{#if tool.niches[niche].length > 0}: { tool.niches[niche].map(niche => niche.toLowerCase()).join(', ') }{/if}<br />
+        {/each}
+        </div>
+        {/if}
+        {#if tool.useCount > 0}
+        <div class="card__meta">{ tool.usecount } { tool.usecount > 1 ? 'coops use' : 'coop uses' } it</div>
+        {/if}
+        {#if tool.pricing }
+        <div class="card__meta"><svg class="icon icon--pricing" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/pricing.svg#pricing" /></svg> Pricing: { tool.pricing }</div>
+        {/if}
+        {#if tool.license }
+        <div class="card__meta"><svg class="icon icon--settings" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/licensing.svg#licensing" /></svg> Licensing: { tool.license }</div>
+        {/if}
+        {#if tool.sectors && tool.sectors.length > 0 }
+        <div class="card__meta"><svg class="icon icon--sector-small" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/sector-small.svg#sector-small" /></svg> Sector: { fancyConcat(tool.sectors) }</div>
+        {/if}
+        {#if tool.languages && tool.languages.length > 0 }
+        <div class="card__meta"><svg class="icon icon--language-small" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><use href="/images/language-small.svg#language-small" /></svg> Language: { fancyConcat(tool.languages) }</div>
+        {/if}
+    </div>
+</article>
+</li>
+
+<style>
+.card {
+	cursor: pointer;
+}
+</style>
