@@ -26,7 +26,8 @@
     .search-form {
         bottom: 1.5em;
         position: relative;
-	}}
+	}
+}
 
 .grid-container--full-width {
     grid-column: 1 / -1;
@@ -43,10 +44,30 @@
 	@include breakpoint-up(lg) {
 		grid-column: 3 / 11;
 	}
+
+	&:before {
+		background-image: url('/images/grid.svg');
+		background-size: cover;
+		content: "";
+		display: block;
+		height: rem(305);
+		position: absolute;
+		right: -44rem;
+		top: -6rem;
+		width: rem(666);
+
+		@include breakpoint-up(lg) {
+			top: 0;
+		}
+	}
 }
 
 .tool__meta {
 	font-size: rem(14);
+}
+
+.last-edited {
+	margin-left: 1rem;
 }
 
 .tool-detail-container hr + h2 {

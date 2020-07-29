@@ -60,5 +60,13 @@
 
 	<div class="spacer"></div>
 	<a rel="external" class="cta" href="{tool.url}">Visit tool website</a>
+	<div class="spacer"></div>
+	<hr class="is-style-hairline has-grey-400-background-color" />
+	<p class="tool__meta is-grey-400-color">
+		<a href="https://directory.platform.coop/{ tool.id }/edit" rel="external"><Icon icon={'edit'} /> Edit tool info</a>
+		<span class="last-edited">
+			Last edited on { new Intl.DateTimeFormat('en-US', {month: 'long', day: 'numeric', year: 'numeric'}).format(new Date(tool.updated_at)) }.
+		</span>
+	</p>
 </article>
 
