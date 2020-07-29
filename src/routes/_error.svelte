@@ -9,9 +9,13 @@
 	<title>{status}</title>
 </svelte:head>
 
-<h1>{status}</h1>
+<div class="page-header">
+	<h1>Error {status}</h1>
+</div>
 
-<p>{error.message}</p>
+<div class="grid-container--full-width">
+<p>{error.message}.</p>
+</div>
 
 {#if dev && error.stack}
 	<pre>{error.stack}</pre>
