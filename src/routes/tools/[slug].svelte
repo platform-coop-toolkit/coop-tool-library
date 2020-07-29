@@ -38,9 +38,13 @@
 		{#if tool.pricing }
 			<div class="tool__meta"><Icon icon={'pricing'} /> <strong>Pricing:</strong> { tool.pricing }</div>
 		{/if}
-		{#if tool.license }
-			<div class="tool__meta"><Icon icon={'licensing'} /> <strong>License:</strong> { tool.license }</div>
-		{/if}
+		{#if tool.license_type == 'proprietary'}
+		<div class="tool__meta"><Icon icon={'licensing'} /> <strong>License:</strong> Proprietary</div>
+		{:else if tool.license_type == 'proprietary-with-floss-integration-tools'}
+        <div class="tool__meta"><Icon icon={'licensing'} /> <strong>License:</strong> Proprietary with { tool.license } integration tools</div>
+		{:else if tool.license_type == 'floss'}
+		<div class="tool__meta"><Icon icon={'licensing'} /> <strong>License:</strong> { tool.license }</div>
+        {/if}
 		{#if tool.sectors && tool.sectors.length > 0 }
 			<div class="tool__meta"><Icon icon={'sector-small'} /> <strong>Sectors:</strong> { fancyConcat(tool.sectors) }</div>
 		{:else}
