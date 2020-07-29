@@ -34,10 +34,37 @@
 
 .tool-detail-container {
     @include full-width-background(white);
-    grid-column: 1 / -1;
+
+	grid-column: 1 / -1;
     position: relative;
     // On top of the full width background
-    z-index: 0;
+	z-index: 0;
+
+	@include breakpoint-up(lg) {
+		grid-column: 3 / 11;
+	}
+}
+
+.tool__meta {
+	font-size: rem(14);
+}
+
+.tool-detail-container hr + h2 {
+	margin-top: 2rem;
+}
+
+.tool-detail-container .meta {
+	margin-top: 1rem;
+
+	@include breakpoint-up(lg) {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
+.tool-detail-container .meta__group {
+	width: calc(50% - (var(--gutter) / 2));
 }
 
 // This seems like it shouldn't be necessary, but filter-wrapper

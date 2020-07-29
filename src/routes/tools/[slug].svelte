@@ -27,30 +27,35 @@
 	<div class="spacer"></div>
 	<h1>{tool.name}</h1>
 	<p>{tool.description}</p>
-	{#if tool.useCount > 0}
-        <div class="card__meta">{ tool.usecount } { tool.usecount > 1 ? 'coops use' : 'coop uses' } it</div>
+	{#if tool.use_count > 0}
+        <p class="tool__meta pc-ff--sans"><Icon icon={'cooperative'} /> <strong>{ tool.use_count } { tool.use_count > 1 ? 'co-ops use' : 'co-op uses' } it</strong></p>
     {/if}
 	<div class="spacer"></div>
-	<hr />
+	<hr class="is-style-hairline has-grey-400-background-color" />
 	<h2>Details</h2>
-
 	<div class="meta">
+		<div class="meta__group">
+		{#if tool.pricing }
+			<div class="tool__meta"><Icon icon={'pricing'} /> <strong>Pricing:</strong> { tool.pricing }</div>
+		{/if}
+		{#if tool.license }
+			<div class="tool__meta"><Icon icon={'licensing'} /> <strong>License:</strong> { tool.license }</div>
+		{/if}
+		{#if tool.sectors && tool.sectors.length > 0 }
+			<div class="tool__meta"><Icon icon={'sector-small'} /> <strong>Sectors:</strong> { fancyConcat(tool.sectors) }</div>
+		{:else}
+			<div class="tool__meta"><Icon icon={'sector-small'} /> <strong>Sectors:</strong> All</div>
+		{/if}
+		</div>
+		<div class="meta__group">
+		{#if tool.languages }
+			<div class="tool__meta"><Icon icon={'language-small'} /> <strong>Languages:</strong> { tool.languages }</div>
+		{/if}
 
-					{#if tool.pricing }
-						<div class="card__meta"><Icon icon={'pricing'} /> Pricing: { tool.pricing }</div>
-					{/if}
-
-					{#if tool.languages }
-						<div class="card__meta"><Icon icon={'language-small'} /> Language: { tool.languages }</div>
-					{/if}
-
-					{#if tool.license }
-						<div class="card__meta"><Icon icon={'licensing'} /> License: { tool.license }</div>
-					{/if}
-
-					{#if tool.sectors && tool.sectors.length > 0 }
-        				<div class="card__meta"><Icon icon={'sector-small'} /> Sector: { fancyConcat(tool.sectors) }</div>
-        			{/if}
+		{#if tool.coop_made == 'yes' }
+			<div class="tool__meta"><Icon icon={'cooperative'} /> <strong>Made by a co-op</strong></div>
+		{/if}
+		</div>
 	</div>
 
 	<div class="spacer"></div>
