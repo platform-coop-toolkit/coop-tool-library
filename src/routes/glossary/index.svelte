@@ -16,8 +16,8 @@
 
 	export let categories = [];
 
-	$:createCategories(glossaryEntries) 
-	
+	$:createCategories(glossaryEntries)
+
 	function createCategories(glossaryEntries) {
 		glossaryEntries.forEach(function(entry) {
 			if(!categories.includes(entry.category)) {
@@ -43,17 +43,17 @@
 	<title>Glossary</title>
 </svelte:head>
 
-<div class="page-header">
+<div class="page-header grid-container--half-width">
 	<div class="inside">
 		<h1>Glossary</h1>
 	</div>
 </div>
 
-<div class="grid-container--full-width">
+<div class="grid-container--half-width">
 {#each categories as category}
 <h2>{category}</h2>
 {#each displayedEntries as entry}
-	{#if entry.category === category}		
+	{#if entry.category === category}
 		<GlossaryEntry entry={entry} />
 	{/if}
 {/each}

@@ -33,6 +33,15 @@
     grid-column: 1 / -1;
 }
 
+.grid-container--half-width,
+.archive .page-header.grid-container--half-width {
+	grid-column: 1 / -1;
+
+	@include breakpoint-up(lg) {
+		grid-column: 3 / 11;
+	}
+}
+
 .tool-detail-container {
     @include full-width-background(white);
 

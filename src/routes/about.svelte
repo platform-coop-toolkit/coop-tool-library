@@ -2,13 +2,13 @@
 	<title>About</title>
 </svelte:head>
 
-<div class="page-header">
+<div class="page-header grid-container--half-width">
 	<div class="inside">
 		<h1>About</h1>
 	</div>
 </div>
 
-<div class="grid-container--full-width">
+<div class="grid-container--half-width">
 
 	<h2>What is the Tool Library?</h2>
 	<p>The Cooperative Tool Library is a website where people can find software tools for their co-ops, and share the tools they use with other co-ops.</p>
