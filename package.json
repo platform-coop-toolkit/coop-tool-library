@@ -1,6 +1,6 @@
 {
   "name": "@platform-coop-toolkit/coop-tool-library",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Practical tools for co-ops.",
   "scripts": {
     "dev": "sapper dev",
