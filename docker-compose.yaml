@@ -1,0 +1,25 @@
+version: "3.4"
+
+services:
+  service-server:
+    container_name: ctl-server
+    user: root
+    image: ctl:0.0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      #anonymous volume to prevent the `node_modules` existing in container to be overridden.
+      - /usr/src/app/node_modules
+      #   - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    networks:
+      - ctl_network
+
+networks:
+  ctl_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.57.0/24

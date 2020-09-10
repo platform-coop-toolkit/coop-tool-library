@@ -16,6 +16,12 @@ npm install
 npm run dev
 ```
 
+or use DockerCompose
+
+```bash
+docker-compose up
+```
+
 The Tool Library will be served from [localhost:3000](http://localhost:3000).
 
 ## Docs
