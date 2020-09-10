@@ -1,4 +1,6 @@
-.github
-dist
-#node_modules
-__sapper__
+/*
+!/package.json
+!/package-lock.json
+!/rollup.config.js
+!/src
+!/static
