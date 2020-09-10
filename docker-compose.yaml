@@ -2,7 +2,8 @@ version: "3.4"
 
 services:
   service-server:
-    container_name: ctl-server
+		container_name: ctl-server
+		restart: always
     user: root
     image: ctl:0.0.1
     build:
